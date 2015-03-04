@@ -1,7 +1,7 @@
 local class = require("middleclass")
-local Base = require("Silicone.elements.Base")
+local Base = require("silicone.elements.Base")
 
-local Root = class("Silicone.Root", Base)
+local Root = class("silicone.Root", Base)
 function Root:initialize(spec)
   self._index = setmetatable({}, { __mode = "v" })
   self._focus_stack = setmetatable({}, { __mode = "v" })

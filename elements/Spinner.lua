@@ -1,9 +1,9 @@
 local class = require("middleclass")
-local Base = require("Silicone.elements.Base")
-local Button = require("Silicone.elements.Button")
-local Label = require("Silicone.elements.Label")
+local Base = require("silicone.elements.Base")
+local Button = require("silicone.elements.Button")
+local Label = require("silicone.elements.Label")
 
-local Spinner = class("Silicone.Spinner", Base)
+local Spinner = class("silicone.Spinner", Base)
 
 function Spinner:initialize(spec, root)
   self.value = 0

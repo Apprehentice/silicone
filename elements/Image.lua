@@ -1,8 +1,8 @@
 local class = require("middleclass")
 local AnAL = require("AnAL")
-local Base = require("Silicone.elements.Base")
+local Base = require("silicone.elements.Base")
 
-local MenuImage = class("Silicone.Image", Base)
+local MenuImage = class("silicone.Image", Base)
 
 function MenuImage:initialize(spec, root)
   self.type = "Image"

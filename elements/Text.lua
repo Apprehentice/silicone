@@ -1,8 +1,8 @@
 local class = require("middleclass")
-local Base = require("Silicone.elements.Base")
-local Popo = require("Popo.Text")
+local Base = require("silicone.elements.Base")
+local Popo = require("popo.Text")
 
-local Text = class("Silicone.Text", Base)
+local Text = class("silicone.Text", Base)
 function Text:initialize(spec, root)
   self.type = "Text"
   self.text = ""

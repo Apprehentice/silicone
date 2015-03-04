@@ -1,7 +1,7 @@
 local class = require("middleclass")
-local Base = require("Silicone.elements.Base")
+local Base = require("silicone.elements.Base")
 
-local ProgressBar = class("Silicone.ProgressBar", Base)
+local ProgressBar = class("silicone.ProgressBar", Base)
 
 function ProgressBar:initialize(spec, root)
   self.value = 0

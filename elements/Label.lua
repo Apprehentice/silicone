@@ -1,7 +1,7 @@
 local class = require("middleclass")
-local Base = require("Silicone.elements.Base")
+local Base = require("silicone.elements.Base")
 
-local Label = class("Silicone.Label", Base)
+local Label = class("silicone.Label", Base)
 
 function Label:initialize(spec, root)
   self.text = ""

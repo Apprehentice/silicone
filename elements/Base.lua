@@ -1,7 +1,7 @@
 local class = require("middleclass")
 
 -- Menu object
-local Menu = class("Silicone.Base")
+local Menu = class("silicone.Base")
 
 function Menu:initialize(spec, root)
   self.type = "Base"
@@ -40,7 +40,7 @@ function Menu:initialize(spec, root)
 
     if spec.children then
       for i, v in ipairs(spec.children) do
-        self.children[i] = require("Silicone.elements." .. v.type)(v, root)
+        self.children[i] = require("silicone.elements." .. v.type)(v, root)
         self.children[i]._parent = self
       end
     end
@@ -49,7 +49,7 @@ function Menu:initialize(spec, root)
   self._parent = false
   self._compiled_skin = {}
 
-  self:addSkin(require("Silicone.skins.default"))
+  self:addSkin(require("silicone.skins.default"))
 end
 
 function Menu:find(key)
@@ -95,7 +95,7 @@ end
 function Menu:addChild(child)
   assert(type(child) == "table", "bad argument #1 to 'addChild' (table expected, got " ..  type(child) .. ")")
   if not class.Object.isSubclassOf(child, Menu) then
-    child = require("Silicone.elements." .. child.type)(child)
+    child = require("silicone.elements." .. child.type)(child)
   end
 
   table.insert(self.children, child)

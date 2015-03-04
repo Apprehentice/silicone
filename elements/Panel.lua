@@ -1,7 +1,7 @@
 local class = require("middleclass")
-local Base = require("Silicone.elements.Base")
+local Base = require("silicone.elements.Base")
 
-local Panel = class("Silicone.Panel", Base)
+local Panel = class("silicone.Panel", Base)
 function Panel:initialize(spec, root)
   -- NOTE: NEW properties go before the Base initializer
   Base.initialize(self, spec, root)

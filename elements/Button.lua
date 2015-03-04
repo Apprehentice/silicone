@@ -1,8 +1,8 @@
 local class = require("middleclass")
-local Base = require("Silicone.elements.Base")
-local Label = require("Silicone.elements.Label")
+local Base = require("silicone.elements.Base")
+local Label = require("silicone.elements.Label")
 
-local Button = class("Silicone.Button", Base)
+local Button = class("silicone.Button", Base)
 
 function Button:initialize(spec, root)
   self.toggle = false

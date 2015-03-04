@@ -1,7 +1,7 @@
 local class = require("middleclass")
-local Base = require("Silicone.elements.Base")
+local Base = require("silicone.elements.Base")
 
-local Canvas = class("Silicone.Canvas", Base)
+local Canvas = class("silicone.Canvas", Base)
 
 function Canvas:initialize(spec, root)
   self.type = "Canvas"

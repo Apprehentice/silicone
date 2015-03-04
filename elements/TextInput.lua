@@ -1,7 +1,7 @@
 local class = require("middleclass")
-local Base = require("Silicone.elements.Base")
+local Base = require("silicone.elements.Base")
 
-local TextInput = class("Silicone.TextInput", Base)
+local TextInput = class("silicone.TextInput", Base)
 
 function TextInput:initialize(spec, root)
   self.text = ""
