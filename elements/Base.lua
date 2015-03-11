@@ -1,9 +1,21 @@
+---
+-- The base object from which all Silicone element are derived.
+-- @classmod Base
+
 local class = require("middleclass")
 
--- Menu object
-local Menu = class("silicone.Base")
+local Base = class("silicone.Base")
 
-function Menu:initialize(spec, root)
+---
+-- Internal.
+-- Internal methods
+-- @section Interal
+
+---
+-- Initializes a Base element
+-- @tparam table spec Menu specification
+-- @tparam Root root Root element
+function Base:initialize(spec, root)
   self.type = "Base"
   self.name = false
   self.x = 0
@@ -52,26 +64,9 @@ function Menu:initialize(spec, root)
   self:addSkin(require("silicone.skins.default"))
 end
 
-function Menu:find(key)
-  if self._parent then
-    print("Passing find along...")
-    return self._parent:find(key)
-  end
-end
-
-function Menu:canFocus()
-  return self.visible and self.enabled
-end
-
-function Menu:focus()
-  self._root:pushFocus(self)
-end
-
-function Menu:hasFocus()
-  return self._root:peekFocus() == self or (self._parent and self._parent:hasFocus())
-end
-
-function Menu:_compile_skin()
+---
+-- Compiles an elements skin
+function Base:_compile_skin()
   self._compiled_skin = {}
 
   local function merge(t1, t2)
@@ -90,9 +85,56 @@ function Menu:_compile_skin()
   end
 end
 
--- Getters/Setters
+---
+-- Querying.
+-- Methods for finding other elements
+-- @section Querying
 
-function Menu:addChild(child)
+---
+-- Finds an element with the given name.
+-- @tparam string key The name of the element
+-- @treturn Base|nil The element
+-- @see Root.find
+function Base:find(key)
+  return self._root:find(key)
+end
+
+---
+-- Focus.
+-- Methods related to element focus
+-- @section Focus
+
+---
+-- Returns whether or not the current element can receive focus which,
+-- by default, is determined by whether or not the element is visible
+-- and enabled
+-- @treturn bool Whether or not the element can receive focus
+function Base:canFocus()
+  return self.visible and self.enabled
+end
+
+---
+-- Puts an element in focus
+function Base:focus()
+  self._root:pushFocus(self)
+end
+
+---
+-- Returns whether or not an element has focus
+-- @treturn bool Whether or not an element has focus
+function Base:hasFocus()
+  return self._root:peekFocus() == self or (self._parent and self._parent:hasFocus())
+end
+
+---
+-- Children.
+-- Methods for managing children
+
+---
+-- Adds a child to an element
+-- @tparam Base child The element to add
+-- @treturn Base The child that was added
+function Base:addChild(child)
   assert(type(child) == "table", "bad argument #1 to 'addChild' (table expected, got " ..  type(child) .. ")")
   if not class.Object.isSubclassOf(child, Menu) then
     child = require("silicone.elements." .. child.type)(child)
@@ -104,7 +146,11 @@ function Menu:addChild(child)
   return child
 end
 
-function Menu:removeChild(child)
+---
+-- Removes a child from an element
+-- @tparam Base The child to remove
+-- @treturn Base The child that was removed
+function Base:removeChild(child)
   assert(type(child) == "table" and child["class"] and child["class"]["super"] and child.class.super == Menu, "bad argument #1 to 'addChild' (not a menu element)")
   for i, v in ipairs(self.children) do
     if v == child then
@@ -115,150 +161,294 @@ function Menu:removeChild(child)
   return child
 end
 
-function Menu:remove()
-  if self:peekFocus() == self then
-    self:popFocus()
+---
+-- Removes an element from its parent. If the element is currently
+-- in focus, it's also popped from the @{Root.popFocus|focus stack}.
+function Base:remove()
+  if self._root:peekFocus() == self then
+    self._root:popFocus()
   end
 
-  self._parent:removeChild(self)
+  return self._parent:removeChild(self)
 end
 
-function Menu:getName()
+---
+-- Getters/Setters.
+-- Getters and setters for element properties
+-- @section Getters/Setters
+
+---
+-- Returns an element's name
+-- @treturn string|nil name
+function Base:getName()
   return self.name
 end
 
-function Menu:setName(v)
+---
+-- Sets an element's name
+-- @raise error if name is taken
+-- @param v name
+function Base:setName(v)
   assert(Menu._index[v] == nil, "an element with the name '" .. tostring(v) .. "' already exists")
   Menu._index[self.name] = nil
   Menu._index[v] = self
   self.name = v
 end
 
-function Menu:getX()
+---
+-- Returns an element's X position
+-- @treturn number X position
+function Base:getX()
   return self.x
 end
 
-function Menu:setX(v)
+---
+-- Sets an element's X position.
+-- Coordinates are relative to the size of the element's parent.
+-- @tparam number v X position
+function Base:setX(v)
   self.x = v
 end
 
-function Menu:getY()
+---
+-- Returns an element's Y position
+-- @treturn number Y position
+function Base:getY()
   return self.y
 end
 
-function Menu:setY(v)
+---
+-- Sets an element's Y position.
+-- Coordinates are relative to the size of the element's parent.
+-- @tparam number v Y position
+function Base:setY(v)
   self.y = v
 end
 
-function Menu:getPosition()
-  return self.x, self.y
+---
+-- Returns an element's position
+-- @treturn number X position
+-- @treturn number Y position
+function Base:getPosition()
+  return self:getX(), self:getY()
 end
 
-function Menu:setPosition(x, y)
-  self.x = x
-  self.y = y
+---
+-- Sets an element's position
+-- @tparam number x X position
+-- @tparam number y Y position
+function Base:setPosition(x, y)
+  self:setX(x)
+  self:setY(y)
 end
 
-function Menu:getXOffset()
+---
+-- Returns an element's X offset
+-- @treturn number X offset
+function Base:getXOffset()
   return self.xOffset
 end
 
-function Menu:setXOffset(v)
+---
+-- Sets an element's X offset
+-- @tparam number v X offset
+function Base:setXOffset(v)
   self.xOffset = v
 end
 
-function Menu:getYOffset()
+---
+-- Returns an element's Y offset
+-- @treturn number Y offset
+function Base:getYOffset()
   return self.yOffset
 end
 
-function Menu:setYOffset(v)
+---
+-- Sets an element's Y offset
+-- @tparam number v Y offset
+function Base:setYOffset(v)
   self.yOffset = v
 end
 
-function Menu:getOffsets()
-  return self.xOffset, self.yOffset
+-- Returns an element's offset
+-- @treturn number X offset
+-- @treturn number Y offset
+function Base:getOffsets()
+  return self:getXOffset(), self:getYOffset()
 end
 
-function Menu:setOffsets(x, y)
-  self.xOffset = x
-  self.yOffset = y
+---
+-- Sets an element's offset
+-- @tparam number x X offset
+-- @tparam number y Y offset
+function Base:setOffsets(x, y)
+  self:setXOffset(x)
+  self:setYOffset(y)
 end
 
-function Menu:getWidth()
+---
+-- Returns an element's width
+-- @treturn number width
+function Base:getWidth()
   return self.width
 end
 
-function Menu:setWidth(v)
+---
+-- Sets an element's width.
+-- Size is relative to the size of the element's parent.
+-- @tparam number v width
+function Base:setWidth(v)
   self.width = v
 end
 
-function Menu:getHeight()
+---
+-- Returns an element's height
+-- @treturn number height
+function Base:getHeight()
   return self.height
 end
 
-function Menu:setHeight(v)
+---
+-- Sets an element's height.
+-- Size is relative to the size of the element's parent.
+-- @tparam number v height
+function Base:setHeight(v)
   self.height = v
 end
 
-function Menu:setDimensions(w, h)
-  self.width = w
-  self.height = h
+---
+-- Returns an element's dimensions
+-- @treturn number width
+-- @treturn number height
+function Base:getDimensions()
+  return self:getWidth(), self:getHeight()
 end
 
-function Menu:getWidthOffset()
+---
+-- Sets an element's dimensions
+-- @tparam number w width
+-- @tparam number h height
+function Base:setDimensions(w, h)
+  self:setWidth(w)
+  self:setHeight(h)
+end
+
+---
+-- Returns an element's width offset
+-- @treturn number width offset
+function Base:getWidthOffset()
   return self.widthOffset
 end
 
-function Menu:getHeightOffset()
+---
+-- Sets an element's width offset
+-- @tparam number w width offset
+function Base:setWidthOffset(w)
+  self.widthOffset = w
+end
+
+---
+-- Returns an element's height offset
+-- @treturn number height offset
+function Base:getHeightOffset()
   return self.heightOffset
 end
 
-function Menu:setWidthOffset(w)
-  self.widthOffset = w
-end
-
-function Menu:setHeightOffset(h)
+---
+-- Sets an element's height offset
+-- @tparam number h height offset
+function Base:setHeightOffset(h)
   self.heightOffset = h
 end
 
-function Menu:getPadding()
-  return self.widthOffset, self.heightOffset
+---
+-- Returns an element's width/height offsets
+-- @treturn number width offset
+-- @treturn number height offset
+function Base:getWHOffsets()
+  return self:getWidthOffset(), self:getHeightOffset()
 end
 
-function Menu:setPadding(w, h)
-  self.widthOffset = w
-  self.heightOffset = h
+---
+-- Sets an element's width/height offsets
+-- @tparam number w width offset
+-- @tparam number h height offset
+function Base:setWHOffsets(w, h)
+  self:setWidthOffset(w)
+  self:setHeightOffset(h)
 end
 
-function Menu:getOrigin()
+---
+-- Gets an element's origin
+-- @treturn string origin
+function Base:getOrigin()
   return self.origin
 end
 
-function Menu:setOrigin(v)
+---
+-- Sets an element's origin.
+-- The origin is the point on an element that it will be referenced from when
+-- drawn.
+--
+-- Possible values are
+-- * top-left
+-- * top-center
+-- * top-right
+-- * left
+-- * center
+-- * right
+-- * bottom-left
+-- * bottom-center
+-- * bottom-right
+--
+-- Default: ``"top-left"``
+-- @tparam string v origin
+function Base:setOrigin(v)
   self.origin = v
 end
 
-function Menu:getAttachment()
-  return self.attachment
-end
-
-function Menu:setAttachment(v)
-  self.attachment = v
-end
-
-function Menu:getAnchor()
+---
+-- Gets an element's anchor
+-- @treturn string anchor
+function Base:getAnchor()
   return self.anchor
 end
 
-function Menu:setAnchor(v)
+---
+-- Sets an element's anchor.
+-- The anchor is the point on an element's parent that its position will be
+-- referenced from when drawn.
+--
+-- Possible values are
+-- * top-left
+-- * top-center
+-- * top-right
+-- * left
+-- * center
+-- * right
+-- * bottom-left
+-- * bottom-center
+-- * bottom-right
+--
+-- Default: ``"top-left"``
+-- @tparam string v anchor
+function Base:setAnchor(v)
   self.anchor = v
 end
 
-function Menu:getParent()
+---
+-- Returns an element's parent
+-- @treturn Base parent
+function Base:getParent()
   return self._parent
 end
 
-function Menu:setParent(v)
+---
+-- Sets an element's parent.
+-- When called, the element is removed from its current parent and added
+-- to the new one.
+-- @tparam Base v parent
+function Base:setParent(v)
   assert(type(v) == "table" and v["class"] and v["class"]["super"] and v.class.super == Menu, "bad argument #1 to 'setParent' (not a menu element)")
   if self._parent then
     self._parent:removeChild(self)
@@ -266,27 +456,50 @@ function Menu:setParent(v)
   v:addChild(self)
 end
 
-function Menu:getEnabled()
+---
+-- Returns whether or not an element is enabled.
+-- @treturn bool enabled
+function Base:isEnabled()
   return self.enabled
 end
 
-function Menu:setEnabled(v)
+---
+-- Sets whether or not an element is enabled
+-- @tparam bool v enabled
+function Base:setEnabled(v)
   self.enabled = v
+  if not v and self._root:peekFocus() == self then
+    self._root:popFocus()
+  end
 end
 
-function Menu:enable()
+---
+-- Enables an element
+function Base:enable()
   self.enabled = true
 end
 
-function Menu:disable()
+---
+-- Disables an element
+function Base:disable()
   self.enabled = false
+  if self._root:peekFocus() == self then
+    self._root:popFocus()
+  end
 end
 
-function Menu:getSkin()
+---
+-- Returns the compiled skin of an element
+-- @treturn table skin
+function Base:getSkin()
   return self._compiled_skin
 end
 
-function Menu:addSkin(skin)
+---
+-- Adds a skin to an element.
+-- Skins are flattened together from an internal list of skins.
+-- @tparam table skin skin
+function Base:addSkin(skin)
   table.insert(self.skins, skin)
   self:_compile_skin()
 
@@ -295,25 +508,53 @@ function Menu:addSkin(skin)
   end
 end
 
-function Menu:getVisible()
+---
+-- Returns whether or not an element is visible
+-- @treturn bool visible
+function Base:isVisible()
   return self.visible
 end
 
-function Menu:setVisible(v)
+---
+-- Sets whether ot not an element is visible
+-- @tparam bool v visible
+function Base:setVisible(v)
   self.visible = v
+  if not v and self._root:peekFocus() == self then
+    self._root:popFocus()
+  end
 end
 
-function Menu:show()
+---
+-- Shows an element
+function Base:show()
   self.visible = true
 end
 
-function Menu:hide()
+---
+-- Hides an element
+function Base:hide()
   self.visible = false
+  if self._root:peekFocus() == self then
+    self._root:popFocus()
+  end
 end
 
--- Helper functions
+---
+-- Absolute Positioning.
+-- Methods for finding the absolute position of an element
+-- @section Absolute Positioning
 
-function Menu:resolveAnchor(anchor, refX, refY)
+---
+-- Resolve a position based on an anchor.
+-- Using an anchor identifier and a reference point, this method resolves
+-- to an absolute position.
+-- @tparam string anchor anchor
+-- @tparam number refX reference X coordinate
+-- @tparam number refY reference Y coordinate
+-- @treturn number absolute X coordinate
+-- @treturn number absolute Y coordinate
+function Base:resolveAnchor(anchor, refX, refY)
   local anchors = {
     ["top-left"] = {0, 0},
     ["top-center"] = {refX/2, 0},
@@ -329,29 +570,57 @@ function Menu:resolveAnchor(anchor, refX, refY)
   return anchors[anchor][1], anchors[anchor][2]
 end
 
-function Menu:getAbsoluteX()
+---
+-- Returns the absolute X coordinate of an element
+-- @treturn number absolute X coordinate
+function Base:getAbsoluteX()
   local origin = self:resolveAnchor(self.origin, self:getAbsoluteWidth(), self:getAbsoluteHeight())
   local anchor = self:resolveAnchor(self.anchor, self._parent:getAbsoluteWidth(), self._parent:getAbsoluteHeight())
   return self._parent:getAbsoluteX() + ((self._parent:getAbsoluteWidth() * self.x) + self.xOffset + anchor - origin)
 end
 
-function Menu:getAbsoluteY()
+---
+-- Returns the absolute Y coordinate of an element
+-- @treturn number absolute Y coordinate
+function Base:getAbsoluteY()
   local origin = select(2, self:resolveAnchor(self.origin, self:getAbsoluteWidth(), self:getAbsoluteHeight()))
   local anchor = select(2, self:resolveAnchor(self.anchor, self._parent:getAbsoluteWidth(), self._parent:getAbsoluteHeight()))
   return self._parent:getAbsoluteY() + ((self._parent:getAbsoluteHeight() * self.y) + self.yOffset + anchor - origin)
 end
 
-function Menu:getAbsoluteWidth()
+---
+-- Returns the absolute width of an element
+-- @treturn number absolute width
+function Base:getAbsoluteWidth()
   return self._parent:getAbsoluteWidth() * self.width + self.widthOffset
 end
 
-function Menu:getAbsoluteHeight()
+---
+-- Returns the absolute height of an element
+-- @treturn number absolute height
+function Base:getAbsoluteHeight()
   return self._parent:getAbsoluteHeight() * self.height + self.heightOffset
 end
 
---Love callbacks
+---
+-- LÖVE Callbacks.
+-- LÖVE callback handlers for Silicone elements
+-- @section LÖVE Callbacks
 
-function Menu:draw()
+---
+-- Generic LÖVE callback.
+-- The Base element implements all of LÖVE's callbacks so elements may
+-- make use of them. To use them, call them like you would a LÖVE callback.
+-- @function Base:callback
+-- @param ...
+-- @usage
+-- -- Calling update on a Silicone element
+-- local base = Base()
+-- function love.update(dt)
+--   base:update(dt)
+-- end
+
+function Base:draw()
   if not self.visible then return end
 
   if self._compiled_skin[self.type] then
@@ -359,113 +628,117 @@ function Menu:draw()
   end
 
   for i, v in ipairs(self.children) do
-    v:draw()
+    if v:isEnabled() then
+      v:draw()
   end
 end
 
-function Menu:update(dt)
+function Base:update(dt)
   for i, v in ipairs(self.children) do
     v:update(dt)
   end
 end
 
-function Menu:gamepadaxis(a, b, c, d, e)
+function Base:gamepadaxis(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:gamepadaxis(a, b, c, d, e)
   end
 end
 
-function Menu:gamepadpressed(a, b, c, d, e)
+function Base:gamepadpressed(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:gamepadpressed(a, b, c, d, e)
   end
 end
 
-function Menu:gamepadreleased(a, b, c, d, e)
+function Base:gamepadreleased(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:gamepadreleased(a, b, c, d, e)
   end
 end
 
-function Menu:joystickadded(a, b, c, d, e)
+function Base:joystickadded(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:joystickadded(a, b, c, d, e)
   end
 end
 
-function Menu:joystickaxis(a, b, c, d, e)
+function Base:joystickaxis(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:joystickaxis(a, b, c, d, e)
   end
 end
 
-function Menu:joystickhat(a, b, c, d, e)
+function Base:joystickhat(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:joystickhat(a, b, c, d, e)
   end
 end
 
-function Menu:joystickpressed(a, b, c, d, e)
+function Base:joystickpressed(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:joystickpressed(a, b, c, d, e)
   end
 end
 
-function Menu:joystickreleased(a, b, c, d, e)
+function Base:joystickreleased(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:joystickreleased(a, b, c, d, e)
   end
 end
 
-function Menu:joystickremoved(a, b, c, d, e)
+function Base:joystickremoved(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:joystickremoved(a, b, c, d, e)
   end
 end
 
-function Menu:keypressed(a, b, c, d, e)
+function Base:keypressed(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:keypressed(a, b, c, d, e)
   end
 end
 
-function Menu:keyreleased(a, b, c, d, e)
+function Base:keyreleased(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:keyreleased(a, b, c, d, e)
   end
 end
 
-function Menu:mousefocus(a, b, c, d, e)
+function Base:mousefocus(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:mousefocus(a, b, c, d, e)
   end
 end
 
-function Menu:mousepressed(a, b, c, d, e)
+function Base:mousepressed(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:mousepressed(a, b, c, d, e)
   end
 end
 
-function Menu:mousereleased(a, b, c, d, e)
+function Base:mousereleased(a, b, c, d, e)
   for i, v in ipairs(self.children) do
     v:mousereleased(a, b, c, d, e)
   end
 end
 
-function Menu:resize()
+function Base:resize()
   for i, v in ipairs(self.children) do
     v:resize()
   end
 end
 
-function Menu:textinput(text)
+function Base:textinput(text)
   for i, v in ipairs(self.children) do
     v:textinput(text)
   end
 end
 
--- Menu callbacks
+---
+-- Silicone Callbacks.
+-- Callbacks for menu functions
+-- @section Silicone Callbacks
 
 local function nav(self, dir)
   if self.navigation[dir] then
@@ -480,32 +753,44 @@ local function nav(self, dir)
   end
 end
 
-function Menu:onLeft()
+---
+-- Callback for leftward navigation
+function Base:onLeft()
   nav(self, "left")
 end
 
-function Menu:onRight()
+---
+-- Callback for rightward navigation
+function Base:onRight()
   nav(self, "right")
 end
 
-function Menu:onUp()
+---
+-- Callback for upward navigation
+function Base:onUp()
   nav(self, "up")
 end
 
-function Menu:onDown()
+---
+-- Callback for downward navigation
+function Base:onDown()
   nav(self, "down")
 end
 
-function Menu:onConfirm()
+---
+-- Callback for the "confirm" action
+function Base:onConfirm()
   if self._parent then
     self._parent:onConfirm()
   end
 end
 
-function Menu:onCancel()
+---
+-- Callback for the "cancel" action
+function Base:onCancel()
   if self._parent then
     self._parent:onCancel()
   end
 end
 
-return Menu
+return Base

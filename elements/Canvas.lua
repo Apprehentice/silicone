@@ -1,34 +1,87 @@
+---
+-- A canvas element for drawing canvases to Silicone menus
+-- @classmod Canvas
+
 local class = require("middleclass")
 local Base = require("silicone.elements.Base")
 
 local Canvas = class("silicone.Canvas", Base)
 
+---
+-- Internal.
+-- Internal methods
+-- @section Internal
+
+---
+-- Initializes a Canvas element
+-- @tparam table spec Menu specification
+-- @tparam Root root Root element
 function Canvas:initialize(spec, root)
   self.type = "Canvas"
   Base.initialize(self, spec, root)
   self._canvas = love.graphics.newCanvas(self:getAbsoluteWidth(), self:getAbsoluteHeight())
 end
 
-function Canvas:setWidth(width)
+---
+-- Getters/Setters.
+-- Getters and setters for element properties
+-- @section Getters/Setters
+
+---
+-- Sets a canvas's width
+-- @tparam number width width
+-- @tparam bool norefresh suppress refreshing the canvas
+function Canvas:setWidth(width, norefresh)
   self.width = width
-  self._canvas = love.graphics.newCanvas(self:getAbsoluteWidth(), self:getAbsoluteHeight())
+  if not norefresh then
+    self._canvas = love.graphics.newCanvas(self:getAbsoluteWidth(), self:getAbsoluteHeight())
+  end
 end
 
-function Canvas:setHeight(height)
+---
+-- Sets a canvas's height
+-- @tparam number height height
+-- @tparam bool norefresh suppress refreshing the canvas
+function Canvas:setHeight(height, norefresh)
   self.height = height
-  self._canvas = love.graphics.newCanvas(self:getAbsoluteWidth(), self:getAbsoluteHeight())
+  if not norefresh then
+    self._canvas = love.graphics.newCanvas(self:getAbsoluteWidth(), self:getAbsoluteHeight())
+  end
 end
 
-function Canvas:setDimensions(w, h)
-  self.width = w
-  self.height = h
-  self._canvas = love.graphics.newCanvas(self:getAbsoluteWidth(), self:getAbsoluteHeight())
+---
+-- Sets a canvas's dimensions
+-- @tparam number w width
+-- @tparam number h height
+-- @tparam bool norefresh suppress refreshing the canvas
+function Canvas:setDimensions(w, h, norefresh)
+  self:setWidth(w, true)
+  self:setHeight(h, true)
+  if not norefresh then
+    self._canvas = love.graphics.newCanvas(self:getAbsoluteWidth(), self:getAbsoluteHeight())
+  end
 end
 
+---
+-- Get a canvas element's canvas
+-- @treturn love:Canvas the canvas
+function Canvas:getCanvas()
+  return self._canvas
+end
+
+---
+-- LÖVE Callbacks.
+-- LÖVE callback handlers for Silicone elements
+-- @section LÖVE Callbacks
+
+---
+-- Refreshes the canvas if the screen size changes
 function Canvas:resize()
   self._canvas = love.graphics.newCanvas(self:getAbsoluteWidth(), self:getAbsoluteHeight())
 end
 
+---
+-- Draws the canvas element
 function Canvas:draw()
   if not self.visible then return end
 

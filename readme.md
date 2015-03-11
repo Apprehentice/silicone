@@ -10,7 +10,6 @@ In this example, we show how to build a very simple menu with a panel, a button,
 local Silicone = require("Silicone")
 
 local Root = Silicone({
-  type = "Root",
   children = {
     {
       type = "Panel",
@@ -72,8 +71,3 @@ As you can see, we create a Root object and define its structure in a table. In 
 
 ## Skinning ##
 Silicone can be configured to look and feel any way you like because the logic behind the drawing of an element has been abstracted away into skins. The default skin is a very basic resourceless skin that does little more than display the elements and provide some visual feedback upon interaction. Because of this, it is recommended that you design your own skin to suit your needs.
-
-
-## To Do ##
-* Write a better readme
-* Create proper documentation
