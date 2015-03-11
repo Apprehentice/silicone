@@ -1,0 +1,334 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Silicone</h1>
+
+<ul>
+  <li><a href="../readme.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Methods">Methods</a></li>
+<li><a href="#Focus">Focus </a></li>
+<li><a href="#L__VE_Callbacks">LÖVE Callbacks </a></li>
+<li><a href="#Silicone_Callbacks">Silicone Callbacks </a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/Base.html">Base</a></li>
+  <li><a href="../classes/Button.html">Button</a></li>
+  <li><a href="../classes/Canvas.html">Canvas</a></li>
+  <li><a href="../classes/Image.html">Image</a></li>
+  <li><a href="../classes/Label.html">Label</a></li>
+  <li><a href="../classes/Panel.html">Panel</a></li>
+  <li><a href="../classes/ProgressBar.html">ProgressBar</a></li>
+  <li><a href="../classes/Root.html">Root</a></li>
+  <li><a href="../classes/Spinner.html">Spinner</a></li>
+  <li><a href="../classes/Text.html">Text</a></li>
+  <li><strong>TextInput</strong></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Silicone.html">Silicone</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../topics/readme.md.html">readme</a></li>
+</ul>
+<h2>Examples</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../examples/simple.lua.html">simple.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>TextInput</code></h1>
+<p>An element for text input</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TextInput:initialize">TextInput:initialize (spec, root)</a></td>
+	<td class="summary">Initializes a TextInput element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TextInput:getText">TextInput:getText ()</a></td>
+	<td class="summary">Returns a TextInput's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TextInput:setText">TextInput:setText (text)</a></td>
+	<td class="summary">Sets a TextInput's text</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TextInput:onConfirm">TextInput:onConfirm ()</a></td>
+	<td class="summary">Gets a TextInput's</td>
+	</tr>
+</table>
+<h2><a href="#Focus">Focus </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TextInput:focus">TextInput:focus ()</a></td>
+	<td class="summary">Puts a text input in focus</td>
+	</tr>
+</table>
+<h2><a href="#L__VE_Callbacks">LÖVE Callbacks </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TextInput:textinput">TextInput:textinput (text)</a></td>
+	<td class="summary">Handles text input</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TextInput:keypressed">TextInput:keypressed (key)</a></td>
+	<td class="summary">Handles backspace</td>
+	</tr>
+</table>
+<h2><a href="#Silicone_Callbacks">Silicone Callbacks </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#TextInput:onLeft">TextInput:onLeft ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#TextInput:onRight">TextInput:onRight ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "TextInput:initialize"></a>
+    <strong>TextInput:initialize (spec, root)</strong>
+    </dt>
+    <dd>
+    Initializes a TextInput element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Menu specification
+        </li>
+        <li><span class="parameter">root</span>
+            <span class="types"><a class="type" href="../classes/Root.html#">Root</a></span>
+         Root element
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TextInput:getText"></a>
+    <strong>TextInput:getText ()</strong>
+    </dt>
+    <dd>
+    Returns a TextInput's text
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        text
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TextInput:setText"></a>
+    <strong>TextInput:setText (text)</strong>
+    </dt>
+    <dd>
+    Sets a TextInput's text
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">text</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         text
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TextInput:onConfirm"></a>
+    <strong>TextInput:onConfirm ()</strong>
+    </dt>
+    <dd>
+    Gets a TextInput's
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Focus"></a>Focus </h2>
+
+          <div class="section-description">
+           Methods related to element focus
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "TextInput:focus"></a>
+    <strong>TextInput:focus ()</strong>
+    </dt>
+    <dd>
+    Puts a text input in focus
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="L__VE_Callbacks"></a>LÖVE Callbacks </h2>
+
+          <div class="section-description">
+           LÖVE callback handlers for Silicone elements
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "TextInput:textinput"></a>
+    <strong>TextInput:textinput (text)</strong>
+    </dt>
+    <dd>
+    Handles text input
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">text</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TextInput:keypressed"></a>
+    <strong>TextInput:keypressed (key)</strong>
+    </dt>
+    <dd>
+    Handles backspace
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Silicone_Callbacks"></a>Silicone Callbacks </h2>
+
+          <div class="section-description">
+           Callbacks for menu functions
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "TextInput:onLeft"></a>
+    <strong>TextInput:onLeft ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "TextInput:onRight"></a>
+    <strong>TextInput:onRight ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-03-11 16:13:52 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

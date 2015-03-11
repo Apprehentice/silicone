@@ -1,0 +1,418 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Silicone</h1>
+
+<ul>
+  <li><a href="../readme.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Methods">Methods</a></li>
+<li><a href="#Getters_Setters">Getters/Setters </a></li>
+<li><a href="#Silicone_Callbacks">Silicone Callbacks </a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/Base.html">Base</a></li>
+  <li><a href="../classes/Button.html">Button</a></li>
+  <li><a href="../classes/Canvas.html">Canvas</a></li>
+  <li><a href="../classes/Image.html">Image</a></li>
+  <li><a href="../classes/Label.html">Label</a></li>
+  <li><a href="../classes/Panel.html">Panel</a></li>
+  <li><a href="../classes/ProgressBar.html">ProgressBar</a></li>
+  <li><a href="../classes/Root.html">Root</a></li>
+  <li><strong>Spinner</strong></li>
+  <li><a href="../classes/Text.html">Text</a></li>
+  <li><a href="../classes/TextInput.html">TextInput</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Silicone.html">Silicone</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../topics/readme.md.html">readme</a></li>
+</ul>
+<h2>Examples</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../examples/simple.lua.html">simple.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Spinner</code></h1>
+<p>A spinner element for number input</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Methods">Methods</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:initialize">Spinner:initialize (spec, root)</a></td>
+	<td class="summary">Initializes a Spinner element</td>
+	</tr>
+</table>
+<h2><a href="#Getters_Setters">Getters/Setters </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:getValue">Spinner:getValue ()</a></td>
+	<td class="summary">Returns a spinner's value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:setValue">Spinner:setValue (value)</a></td>
+	<td class="summary">Sets a spinner's value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:getIncrememnt">Spinner:getIncrememnt ()</a></td>
+	<td class="summary">Returns a spinner's increment</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:setIncrement">Spinner:setIncrement (inc)</a></td>
+	<td class="summary">Sets a spinner's increment</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:getMin">Spinner:getMin ()</a></td>
+	<td class="summary">Returns a spinner's minimum value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:setMin">Spinner:setMin (min)</a></td>
+	<td class="summary">Sets a spinner's minimum value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:getMax">Spinner:getMax ()</a></td>
+	<td class="summary">Returns a spinner's maximum value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:setMax">Spinner:setMax (min)</a></td>
+	<td class="summary">Sets a spinner's maximum value</td>
+	</tr>
+</table>
+<h2><a href="#Silicone_Callbacks">Silicone Callbacks </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:onUp">Spinner:onUp ()</a></td>
+	<td class="summary">Incremements a spinner's value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:onDown">Spinner:onDown ()</a></td>
+	<td class="summary">Decremements a spinner's value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:onConfirm">Spinner:onConfirm ()</a></td>
+	<td class="summary">Commits a spinner's value</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Spinner:onCancel">Spinner:onCancel ()</a></td>
+	<td class="summary">Discards a spinner's value</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Methods"></a>Methods</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "Spinner:initialize"></a>
+    <strong>Spinner:initialize (spec, root)</strong>
+    </dt>
+    <dd>
+    Initializes a Spinner element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Menu specification
+        </li>
+        <li><span class="parameter">root</span>
+            <span class="types"><a class="type" href="../classes/Root.html#">Root</a></span>
+         Root element
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Getters_Setters"></a>Getters/Setters </h2>
+
+          <div class="section-description">
+           Getters and setters for element properties
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Spinner:getValue"></a>
+    <strong>Spinner:getValue ()</strong>
+    </dt>
+    <dd>
+    Returns a spinner's value
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        value
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Spinner:setValue"></a>
+    <strong>Spinner:setValue (value)</strong>
+    </dt>
+    <dd>
+    Sets a spinner's value
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">value</span>
+            <span class="types"><span class="type">number</span></span>
+         value
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Spinner:getIncrememnt"></a>
+    <strong>Spinner:getIncrememnt ()</strong>
+    </dt>
+    <dd>
+    Returns a spinner's increment
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        increment
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Spinner:setIncrement"></a>
+    <strong>Spinner:setIncrement (inc)</strong>
+    </dt>
+    <dd>
+    Sets a spinner's increment
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">inc</span>
+            <span class="types"><span class="type">number</span></span>
+         increment
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Spinner:getMin"></a>
+    <strong>Spinner:getMin ()</strong>
+    </dt>
+    <dd>
+    Returns a spinner's minimum value
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span> or <span class="type">false</span></span>
+        value
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Spinner:setMin"></a>
+    <strong>Spinner:setMin (min)</strong>
+    </dt>
+    <dd>
+    Sets a spinner's minimum value
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">min</span>
+            <span class="types"><span class="type">number</span> or <span class="type">false</span></span>
+         minimum value
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Spinner:getMax"></a>
+    <strong>Spinner:getMax ()</strong>
+    </dt>
+    <dd>
+    Returns a spinner's maximum value
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span> or <span class="type">false</span></span>
+        value
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Spinner:setMax"></a>
+    <strong>Spinner:setMax (min)</strong>
+    </dt>
+    <dd>
+    Sets a spinner's maximum value
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">min</span>
+            <span class="types"><span class="type">number</span> or <span class="type">false</span></span>
+         maximum value
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Silicone_Callbacks"></a>Silicone Callbacks </h2>
+
+          <div class="section-description">
+           Callbacks for menu functions
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Spinner:onUp"></a>
+    <strong>Spinner:onUp ()</strong>
+    </dt>
+    <dd>
+    Incremements a spinner's value
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Spinner:onDown"></a>
+    <strong>Spinner:onDown ()</strong>
+    </dt>
+    <dd>
+    Decremements a spinner's value
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Spinner:onConfirm"></a>
+    <strong>Spinner:onConfirm ()</strong>
+    </dt>
+    <dd>
+    Commits a spinner's value
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Spinner:onCancel"></a>
+    <strong>Spinner:onCancel ()</strong>
+    </dt>
+    <dd>
+    Discards a spinner's value
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-03-11 16:13:52 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

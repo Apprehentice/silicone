@@ -1,0 +1,484 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Silicone</h1>
+
+<ul>
+  <li><a href="../readme.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Internal">Internal </a></li>
+<li><a href="#Getters_Setters">Getters/Setters </a></li>
+<li><a href="#L__VE_Callbacks">LÖVE Callbacks </a></li>
+<li><a href="#AnAL_Functions">AnAL Functions </a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/Base.html">Base</a></li>
+  <li><a href="../classes/Button.html">Button</a></li>
+  <li><a href="../classes/Canvas.html">Canvas</a></li>
+  <li><strong>Image</strong></li>
+  <li><a href="../classes/Label.html">Label</a></li>
+  <li><a href="../classes/Panel.html">Panel</a></li>
+  <li><a href="../classes/ProgressBar.html">ProgressBar</a></li>
+  <li><a href="../classes/Root.html">Root</a></li>
+  <li><a href="../classes/Spinner.html">Spinner</a></li>
+  <li><a href="../classes/Text.html">Text</a></li>
+  <li><a href="../classes/TextInput.html">TextInput</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Silicone.html">Silicone</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../topics/readme.md.html">readme</a></li>
+</ul>
+<h2>Examples</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../examples/simple.lua.html">simple.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Image</code></h1>
+<p>An image and animation element using the <a href="https://www.love2d.org/wiki/AnAL">AnAL</a> library.</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Internal">Internal </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Image:initialize">Image:initialize (spec, root)</a></td>
+	<td class="summary">Initializes an Image element</td>
+	</tr>
+</table>
+<h2><a href="#Getters_Setters">Getters/Setters </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Image:getAngle">Image:getAngle ()</a></td>
+	<td class="summary">Returns an image's angle</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Image:setAngle">Image:setAngle (angle)</a></td>
+	<td class="summary">Sets an image's angle</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Image:getXScale">Image:getXScale ()</a></td>
+	<td class="summary">Returns an image's X scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Image:setXScale">Image:setXScale (x)</a></td>
+	<td class="summary">Sets an image's X scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Image:getYScale">Image:getYScale ()</a></td>
+	<td class="summary">Returns an image's Y scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Image:setYScale">Image:setYScale (y)</a></td>
+	<td class="summary">Sets an image's Y scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Image:getScale">Image:getScale ()</a></td>
+	<td class="summary">Returns an image's scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Image:setScale">Image:setScale (x, y)</a></td>
+	<td class="summary">Sets an image's scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Image:getAutoScale">Image:getAutoScale ()</a></td>
+	<td class="summary">Returns whether or not the image is set to auto scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Image:setAutoScale">Image:setAutoScale (scale)</a></td>
+	<td class="summary">Sets whether or not the image should auto scale</td>
+	</tr>
+</table>
+<h2><a href="#L__VE_Callbacks">LÖVE Callbacks </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Image:update">Image:update (dt)</a></td>
+	<td class="summary">Updates an Image</td>
+	</tr>
+</table>
+<h2><a href="#AnAL_Functions">AnAL Functions </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Image:AnALFunction">Image:AnALFunction (...)</a></td>
+	<td class="summary">Generic AnAL function.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header has-description"><a name="Internal"></a>Internal </h2>
+
+          <div class="section-description">
+           Internal methods
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Image:initialize"></a>
+    <strong>Image:initialize (spec, root)</strong>
+    </dt>
+    <dd>
+    Initializes an Image element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Menu specification
+        </li>
+        <li><span class="parameter">root</span>
+            <span class="types"><a class="type" href="../classes/Root.html#">Root</a></span>
+         Root element
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Getters_Setters"></a>Getters/Setters </h2>
+
+          <div class="section-description">
+           Getters and setters for element properties
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Image:getAngle"></a>
+    <strong>Image:getAngle ()</strong>
+    </dt>
+    <dd>
+    Returns an image's angle
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        angle
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Image:setAngle"></a>
+    <strong>Image:setAngle (angle)</strong>
+    </dt>
+    <dd>
+    Sets an image's angle
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">angle</span>
+            <span class="types"><span class="type">number</span></span>
+         angle
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Image:getXScale"></a>
+    <strong>Image:getXScale ()</strong>
+    </dt>
+    <dd>
+    Returns an image's X scale
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        X scale
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Image:setXScale"></a>
+    <strong>Image:setXScale (x)</strong>
+    </dt>
+    <dd>
+    Sets an image's X scale
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X scale
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Image:getYScale"></a>
+    <strong>Image:getYScale ()</strong>
+    </dt>
+    <dd>
+    Returns an image's Y scale
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        Y scale
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Image:setYScale"></a>
+    <strong>Image:setYScale (y)</strong>
+    </dt>
+    <dd>
+    Sets an image's Y scale
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y scale
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Image:getScale"></a>
+    <strong>Image:getScale ()</strong>
+    </dt>
+    <dd>
+    Returns an image's scale
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        X scale</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        Y scale</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Image:setScale"></a>
+    <strong>Image:setScale (x, y)</strong>
+    </dt>
+    <dd>
+    Sets an image's scale
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X scale
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y scale
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Image:getAutoScale"></a>
+    <strong>Image:getAutoScale ()</strong>
+    </dt>
+    <dd>
+    Returns whether or not the image is set to auto scale
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        autoscale
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Image:setAutoScale"></a>
+    <strong>Image:setAutoScale (scale)</strong>
+    </dt>
+    <dd>
+    Sets whether or not the image should auto scale
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">scale</span>
+            <span class="types"><span class="type">bool</span></span>
+         autoscale
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="L__VE_Callbacks"></a>LÖVE Callbacks </h2>
+
+          <div class="section-description">
+           LÖVE callback handlers for Silicone elements
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Image:update"></a>
+    <strong>Image:update (dt)</strong>
+    </dt>
+    <dd>
+    Updates an Image
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+            <span class="types"><span class="type">number</span></span>
+         Time since the last update in seconds
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="AnAL_Functions"></a>AnAL Functions </h2>
+
+          <div class="section-description">
+           AnAL convenience functions for Silicone Images
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Image:AnALFunction"></a>
+    <strong>Image:AnALFunction (...)</strong>
+    </dt>
+    <dd>
+    Generic AnAL function. </p>
+
+<p> The Image element implements all of AnAL's functions so you can
+ manipulate them just like you would a normal AnAL animation.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="https://www.love2d.org/wiki/AnAL">AnAL</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="comment">-- ...
+</span> <span class="comment">-- Create Image 'image'
+</span> <span class="comment">-- ...
+</span>
+ <span class="comment">-- Set an Image's speed to ~30 FPS
+</span> image:setSpeed(<span class="number">0.333</span>)</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-03-11 16:13:52 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

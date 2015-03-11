@@ -1,0 +1,304 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Silicone</h1>
+
+<ul>
+  <li><a href="../readme.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Internal">Internal </a></li>
+<li><a href="#Getters_Setters">Getters/Setters </a></li>
+<li><a href="#L__VE_Callbacks">LÖVE Callbacks </a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/Base.html">Base</a></li>
+  <li><a href="../classes/Button.html">Button</a></li>
+  <li><strong>Canvas</strong></li>
+  <li><a href="../classes/Image.html">Image</a></li>
+  <li><a href="../classes/Label.html">Label</a></li>
+  <li><a href="../classes/Panel.html">Panel</a></li>
+  <li><a href="../classes/ProgressBar.html">ProgressBar</a></li>
+  <li><a href="../classes/Root.html">Root</a></li>
+  <li><a href="../classes/Spinner.html">Spinner</a></li>
+  <li><a href="../classes/Text.html">Text</a></li>
+  <li><a href="../classes/TextInput.html">TextInput</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Silicone.html">Silicone</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../topics/readme.md.html">readme</a></li>
+</ul>
+<h2>Examples</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../examples/simple.lua.html">simple.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Canvas</code></h1>
+<p>A canvas element for drawing canvases to Silicone menus</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Internal">Internal </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Canvas:initialize">Canvas:initialize (spec, root)</a></td>
+	<td class="summary">Initializes a Canvas element</td>
+	</tr>
+</table>
+<h2><a href="#Getters_Setters">Getters/Setters </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Canvas:setWidth">Canvas:setWidth (width, norefresh)</a></td>
+	<td class="summary">Sets a canvas's width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Canvas:setHeight">Canvas:setHeight (height, norefresh)</a></td>
+	<td class="summary">Sets a canvas's height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Canvas:setDimensions">Canvas:setDimensions (w, h, norefresh)</a></td>
+	<td class="summary">Sets a canvas's dimensions</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Canvas:getCanvas">Canvas:getCanvas ()</a></td>
+	<td class="summary">Get a canvas element's canvas</td>
+	</tr>
+</table>
+<h2><a href="#L__VE_Callbacks">LÖVE Callbacks </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Canvas:resize">Canvas:resize ()</a></td>
+	<td class="summary">Refreshes the canvas if the screen size changes</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Canvas:draw">Canvas:draw ()</a></td>
+	<td class="summary">Draws the canvas element</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header has-description"><a name="Internal"></a>Internal </h2>
+
+          <div class="section-description">
+           Internal methods
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Canvas:initialize"></a>
+    <strong>Canvas:initialize (spec, root)</strong>
+    </dt>
+    <dd>
+    Initializes a Canvas element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Menu specification
+        </li>
+        <li><span class="parameter">root</span>
+            <span class="types"><a class="type" href="../classes/Root.html#">Root</a></span>
+         Root element
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Getters_Setters"></a>Getters/Setters </h2>
+
+          <div class="section-description">
+           Getters and setters for element properties
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Canvas:setWidth"></a>
+    <strong>Canvas:setWidth (width, norefresh)</strong>
+    </dt>
+    <dd>
+    Sets a canvas's width
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">width</span>
+            <span class="types"><span class="type">number</span></span>
+         width
+        </li>
+        <li><span class="parameter">norefresh</span>
+            <span class="types"><span class="type">bool</span></span>
+         suppress refreshing the canvas
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Canvas:setHeight"></a>
+    <strong>Canvas:setHeight (height, norefresh)</strong>
+    </dt>
+    <dd>
+    Sets a canvas's height
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">height</span>
+            <span class="types"><span class="type">number</span></span>
+         height
+        </li>
+        <li><span class="parameter">norefresh</span>
+            <span class="types"><span class="type">bool</span></span>
+         suppress refreshing the canvas
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Canvas:setDimensions"></a>
+    <strong>Canvas:setDimensions (w, h, norefresh)</strong>
+    </dt>
+    <dd>
+    Sets a canvas's dimensions
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">w</span>
+            <span class="types"><span class="type">number</span></span>
+         width
+        </li>
+        <li><span class="parameter">h</span>
+            <span class="types"><span class="type">number</span></span>
+         height
+        </li>
+        <li><span class="parameter">norefresh</span>
+            <span class="types"><span class="type">bool</span></span>
+         suppress refreshing the canvas
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Canvas:getCanvas"></a>
+    <strong>Canvas:getCanvas ()</strong>
+    </dt>
+    <dd>
+    Get a canvas element's canvas
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="https://www.love2d.org/wiki/Canvas">Canvas</a></span>
+        the canvas
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="L__VE_Callbacks"></a>LÖVE Callbacks </h2>
+
+          <div class="section-description">
+           LÖVE callback handlers for Silicone elements
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Canvas:resize"></a>
+    <strong>Canvas:resize ()</strong>
+    </dt>
+    <dd>
+    Refreshes the canvas if the screen size changes
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Canvas:draw"></a>
+    <strong>Canvas:draw ()</strong>
+    </dt>
+    <dd>
+    Draws the canvas element
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-03-11 16:13:52 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

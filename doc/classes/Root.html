@@ -1,0 +1,729 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Silicone</h1>
+
+<ul>
+  <li><a href="../readme.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Internal">Internal </a></li>
+<li><a href="#Querying">Querying </a></li>
+<li><a href="#Getters_Setters">Getters/Setters </a></li>
+<li><a href="#Focus_Stack">Focus Stack </a></li>
+<li><a href="#Events">Events </a></li>
+<li><a href="#Callbacks">Callbacks </a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/Base.html">Base</a></li>
+  <li><a href="../classes/Button.html">Button</a></li>
+  <li><a href="../classes/Canvas.html">Canvas</a></li>
+  <li><a href="../classes/Image.html">Image</a></li>
+  <li><a href="../classes/Label.html">Label</a></li>
+  <li><a href="../classes/Panel.html">Panel</a></li>
+  <li><a href="../classes/ProgressBar.html">ProgressBar</a></li>
+  <li><strong>Root</strong></li>
+  <li><a href="../classes/Spinner.html">Spinner</a></li>
+  <li><a href="../classes/Text.html">Text</a></li>
+  <li><a href="../classes/TextInput.html">TextInput</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Silicone.html">Silicone</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../topics/readme.md.html">readme</a></li>
+</ul>
+<h2>Examples</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../examples/simple.lua.html">simple.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Root</code></h1>
+<p>The root level element of all Silicone menu structures.</p>
+<p> The Root element is the foundation for any Silicone menu hierarchy as it
+ handles all of Silicone's callbacks and fires them for its children.</p>
+
+<p> Not all available methods are listed here. For more information, see
+ <a href="../classes/Base.html#">Base</a>.</p>
+
+
+<h2><a href="#Internal">Internal </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Root:initialize">Root:initialize (spec)</a></td>
+	<td class="summary">Initializes a Root element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:_add_name">Root:_add_name (element)</a></td>
+	<td class="summary">Adds a named element to the Root's name index</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:_restack_focus">Root:_restack_focus ()</a></td>
+	<td class="summary">Reorders the focus stack so that it can be indexed.</td>
+	</tr>
+</table>
+<h2><a href="#Querying">Querying </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Root:find">Root:find (key)</a></td>
+	<td class="summary">Finds an element with the given name.</td>
+	</tr>
+</table>
+<h2><a href="#Getters_Setters">Getters/Setters </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Root:getAbsoluteWidth">Root:getAbsoluteWidth ()</a></td>
+	<td class="summary">Returns a Root element's width (the screen width)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:getAbsoluteHeight">Root:getAbsoluteHeight ()</a></td>
+	<td class="summary">Returns a Root element's height (the screen height)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:getAbsoluteX">Root:getAbsoluteX ()</a></td>
+	<td class="summary">Returns a Root element's X coordinate (usually 0)</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:getAbsoluteY">Root:getAbsoluteY ()</a></td>
+	<td class="summary">Returns a Root element's Y coordinate (usually 0)</td>
+	</tr>
+</table>
+<h2><a href="#Focus_Stack">Focus Stack </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Root:pushFocus">Root:pushFocus (element, norestack)</a></td>
+	<td class="summary">Pushes an element onto the focus stack and puts it in focus</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:popFocus">Root:popFocus (norestack)</a></td>
+	<td class="summary">Pops the first element from the focus stack</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:peekFocus">Root:peekFocus (norestack)</a></td>
+	<td class="summary">Returns the first element on the focus stack</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:focus">Root:focus ()</a></td>
+	<td class="summary">Sets focus to the first available element in the focus stack</td>
+	</tr>
+</table>
+<h2><a href="#Events">Events </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Root:update">Root:update (dt)</a></td>
+	<td class="summary">Updates all of a Root's children and resizes it to fit the screen.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:doLeft">Root:doLeft ()</a></td>
+	<td class="summary">Calls <code>onLeft</code> for the currently focused element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:doRight">Root:doRight ()</a></td>
+	<td class="summary">Calls <code>onRight</code> for the currently focused element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:doUp">Root:doUp ()</a></td>
+	<td class="summary">Calls <code>onUp</code> for the currently focused element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:doDown">Root:doDown ()</a></td>
+	<td class="summary">Calls <code>onDown</code> for the currently focused element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:doConfirm">Root:doConfirm ()</a></td>
+	<td class="summary">Calls <code>onConfirm</code> for the currently focused element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:doCancel">Root:doCancel ()</a></td>
+	<td class="summary">Calls <code>onCancel</code> for the currently focused element</td>
+	</tr>
+</table>
+<h2><a href="#Callbacks">Callbacks </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Root:onFocus">Root:onFocus ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:onLeft">Root:onLeft ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:onRight">Root:onRight ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:onUp">Root:onUp ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:onDown">Root:onDown ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:onConfirm">Root:onConfirm ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:onCancel">Root:onCancel ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header has-description"><a name="Internal"></a>Internal </h2>
+
+          <div class="section-description">
+           Internal methods
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Root:initialize"></a>
+    <strong>Root:initialize (spec)</strong>
+    </dt>
+    <dd>
+    Initializes a Root element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Menu specification
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:_add_name"></a>
+    <strong>Root:_add_name (element)</strong>
+    </dt>
+    <dd>
+    Adds a named element to the Root's name index
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">element</span>
+            <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+         Menu element
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:_restack_focus"></a>
+    <strong>Root:_restack_focus ()</strong>
+    </dt>
+    <dd>
+    Reorders the focus stack so that it can be indexed. </p>
+
+<p> This must be done regularly as elements in the focus stack may be
+ removed by the garbage collector.
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Querying"></a>Querying </h2>
+
+          <div class="section-description">
+           Methods for finding other elements
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Root:find"></a>
+    <strong>Root:find (key)</strong>
+    </dt>
+    <dd>
+    Finds an element with the given name.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The name of the element
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Base.html#">Base</a> or <span class="type">nil</span></span>
+        The element
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Getters_Setters"></a>Getters/Setters </h2>
+
+          <div class="section-description">
+           Getters and setters for element properties
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Root:getAbsoluteWidth"></a>
+    <strong>Root:getAbsoluteWidth ()</strong>
+    </dt>
+    <dd>
+    Returns a Root element's width (the screen width)
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        The Root element's width
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:getAbsoluteHeight"></a>
+    <strong>Root:getAbsoluteHeight ()</strong>
+    </dt>
+    <dd>
+    Returns a Root element's height (the screen height)
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        The Root element's height
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:getAbsoluteX"></a>
+    <strong>Root:getAbsoluteX ()</strong>
+    </dt>
+    <dd>
+    Returns a Root element's X coordinate (usually 0)
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        The Root element's X coordinate
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:getAbsoluteY"></a>
+    <strong>Root:getAbsoluteY ()</strong>
+    </dt>
+    <dd>
+    Returns a Root element's Y coordinate (usually 0)
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        The Root element's Y coordinate
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Focus_Stack"></a>Focus Stack </h2>
+
+          <div class="section-description">
+           Methods for manipulating the focus stack
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Root:pushFocus"></a>
+    <strong>Root:pushFocus (element, norestack)</strong>
+    </dt>
+    <dd>
+    Pushes an element onto the focus stack and puts it in focus
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">element</span>
+            <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+         The element to push
+        </li>
+        <li><span class="parameter">norestack</span>
+            <span class="types"><span class="type">bool</span></span>
+         Suppress restacking the focus stack
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:popFocus"></a>
+    <strong>Root:popFocus (norestack)</strong>
+    </dt>
+    <dd>
+    Pops the first element from the focus stack
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">norestack</span>
+            <span class="types"><span class="type">bool</span></span>
+         Suppress restacking the focus stack
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+        The popped element
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:peekFocus"></a>
+    <strong>Root:peekFocus (norestack)</strong>
+    </dt>
+    <dd>
+    Returns the first element on the focus stack
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">norestack</span>
+            <span class="types"><span class="type">bool</span></span>
+         Suppress restacking the focus stack
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+        The element
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:focus"></a>
+    <strong>Root:focus ()</strong>
+    </dt>
+    <dd>
+    Sets focus to the first available element in the focus stack
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Events"></a>Events </h2>
+
+          <div class="section-description">
+           Methods for firing events when it's time for the menu to do something
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Root:update"></a>
+    <strong>Root:update (dt)</strong>
+    </dt>
+    <dd>
+    Updates all of a Root's children and resizes it to fit the screen.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+            <span class="types"><span class="type">number</span></span>
+         Time since the last update in seconds
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="https://www.love2d.org/wiki/love.update">love.update</a>
+    </ul>
+
+
+</dd>
+    <dt>
+    <a name = "Root:doLeft"></a>
+    <strong>Root:doLeft ()</strong>
+    </dt>
+    <dd>
+    Calls <code>onLeft</code> for the currently focused element
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:doRight"></a>
+    <strong>Root:doRight ()</strong>
+    </dt>
+    <dd>
+    Calls <code>onRight</code> for the currently focused element
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:doUp"></a>
+    <strong>Root:doUp ()</strong>
+    </dt>
+    <dd>
+    Calls <code>onUp</code> for the currently focused element
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:doDown"></a>
+    <strong>Root:doDown ()</strong>
+    </dt>
+    <dd>
+    Calls <code>onDown</code> for the currently focused element
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:doConfirm"></a>
+    <strong>Root:doConfirm ()</strong>
+    </dt>
+    <dd>
+    Calls <code>onConfirm</code> for the currently focused element
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:doCancel"></a>
+    <strong>Root:doCancel ()</strong>
+    </dt>
+    <dd>
+    Calls <code>onCancel</code> for the currently focused element
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Callbacks"></a>Callbacks </h2>
+
+          <div class="section-description">
+           Callbacks do absolutely nothing on Root elements.
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Root:onFocus"></a>
+    <strong>Root:onFocus ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:onLeft"></a>
+    <strong>Root:onLeft ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:onRight"></a>
+    <strong>Root:onRight ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:onUp"></a>
+    <strong>Root:onUp ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:onDown"></a>
+    <strong>Root:onDown ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:onConfirm"></a>
+    <strong>Root:onConfirm ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:onCancel"></a>
+    <strong>Root:onCancel ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-03-11 16:13:52 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

@@ -1,0 +1,1728 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Silicone</h1>
+
+<ul>
+  <li><a href="../readme.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Internal">Internal </a></li>
+<li><a href="#Querying">Querying </a></li>
+<li><a href="#Focus">Focus </a></li>
+<li><a href="#Getters_Setters">Getters/Setters </a></li>
+<li><a href="#Absolute_Positioning">Absolute Positioning </a></li>
+<li><a href="#L__VE_Callbacks">LÖVE Callbacks </a></li>
+<li><a href="#Silicone_Callbacks">Silicone Callbacks </a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><strong>Base</strong></li>
+  <li><a href="../classes/Button.html">Button</a></li>
+  <li><a href="../classes/Canvas.html">Canvas</a></li>
+  <li><a href="../classes/Image.html">Image</a></li>
+  <li><a href="../classes/Label.html">Label</a></li>
+  <li><a href="../classes/Panel.html">Panel</a></li>
+  <li><a href="../classes/ProgressBar.html">ProgressBar</a></li>
+  <li><a href="../classes/Root.html">Root</a></li>
+  <li><a href="../classes/Spinner.html">Spinner</a></li>
+  <li><a href="../classes/Text.html">Text</a></li>
+  <li><a href="../classes/TextInput.html">TextInput</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Silicone.html">Silicone</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../topics/readme.md.html">readme</a></li>
+</ul>
+<h2>Examples</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../examples/simple.lua.html">simple.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Base</code></h1>
+<p>The base object from which all Silicone element are derived.</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Internal">Internal </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Base:initialize">Base:initialize (spec, root)</a></td>
+	<td class="summary">Initializes a Base element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:_compile_skin">Base:_compile_skin ()</a></td>
+	<td class="summary">Compiles an elements skin</td>
+	</tr>
+</table>
+<h2><a href="#Querying">Querying </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Base:find">Base:find (key)</a></td>
+	<td class="summary">Finds an element with the given name.</td>
+	</tr>
+</table>
+<h2><a href="#Focus">Focus </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Base:canFocus">Base:canFocus ()</a></td>
+	<td class="summary">Returns whether or not the current element can receive focus which,
+ by default, is determined by whether or not the element is visible
+ and enabled</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:focus">Base:focus ()</a></td>
+	<td class="summary">Puts an element in focus</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:hasFocus">Base:hasFocus ()</a></td>
+	<td class="summary">Returns whether or not an element has focus</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:addChild">Base:addChild (child)</a></td>
+	<td class="summary">Adds a child to an element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:removeChild">Base:removeChild (The)</a></td>
+	<td class="summary">Removes a child from an element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:remove">Base:remove ()</a></td>
+	<td class="summary">Removes an element from its parent.</td>
+	</tr>
+</table>
+<h2><a href="#Getters_Setters">Getters/Setters </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Base:getName">Base:getName ()</a></td>
+	<td class="summary">Returns an element's name</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setName">Base:setName (v)</a></td>
+	<td class="summary">Sets an element's name</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getX">Base:getX ()</a></td>
+	<td class="summary">Returns an element's X position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setX">Base:setX (v)</a></td>
+	<td class="summary">Sets an element's X position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getY">Base:getY ()</a></td>
+	<td class="summary">Returns an element's Y position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setY">Base:setY (v)</a></td>
+	<td class="summary">Sets an element's Y position.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getPosition">Base:getPosition ()</a></td>
+	<td class="summary">Returns an element's position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setPosition">Base:setPosition (x, y)</a></td>
+	<td class="summary">Sets an element's position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getXOffset">Base:getXOffset ()</a></td>
+	<td class="summary">Returns an element's X offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setXOffset">Base:setXOffset (v)</a></td>
+	<td class="summary">Sets an element's X offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getYOffset">Base:getYOffset ()</a></td>
+	<td class="summary">Returns an element's Y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setYOffset">Base:setYOffset (v)</a></td>
+	<td class="summary">Sets an element's Y offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setOffsets">Base:setOffsets (x, y)</a></td>
+	<td class="summary">Sets an element's offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getWidth">Base:getWidth ()</a></td>
+	<td class="summary">Returns an element's width</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setWidth">Base:setWidth (v)</a></td>
+	<td class="summary">Sets an element's width.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getHeight">Base:getHeight ()</a></td>
+	<td class="summary">Returns an element's height</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setHeight">Base:setHeight (v)</a></td>
+	<td class="summary">Sets an element's height.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getDimensions">Base:getDimensions ()</a></td>
+	<td class="summary">Returns an element's dimensions</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setDimensions">Base:setDimensions (w, h)</a></td>
+	<td class="summary">Sets an element's dimensions</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getWidthOffset">Base:getWidthOffset ()</a></td>
+	<td class="summary">Returns an element's width offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setWidthOffset">Base:setWidthOffset (w)</a></td>
+	<td class="summary">Sets an element's width offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getHeightOffset">Base:getHeightOffset ()</a></td>
+	<td class="summary">Returns an element's height offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setHeightOffset">Base:setHeightOffset (h)</a></td>
+	<td class="summary">Sets an element's height offset</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getWHOffsets">Base:getWHOffsets ()</a></td>
+	<td class="summary">Returns an element's width/height offsets</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setWHOffsets">Base:setWHOffsets (w, h)</a></td>
+	<td class="summary">Sets an element's width/height offsets</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getOrigin">Base:getOrigin ()</a></td>
+	<td class="summary">Gets an element's origin</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setOrigin">Base:setOrigin (v)</a></td>
+	<td class="summary">Sets an element's origin.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getAnchor">Base:getAnchor ()</a></td>
+	<td class="summary">Gets an element's anchor</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setAnchor">Base:setAnchor (v)</a></td>
+	<td class="summary">Sets an element's anchor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getParent">Base:getParent ()</a></td>
+	<td class="summary">Returns an element's parent</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setParent">Base:setParent (v)</a></td>
+	<td class="summary">Sets an element's parent.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:isEnabled">Base:isEnabled ()</a></td>
+	<td class="summary">Returns whether or not an element is enabled.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setEnabled">Base:setEnabled (v)</a></td>
+	<td class="summary">Sets whether or not an element is enabled</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:enable">Base:enable ()</a></td>
+	<td class="summary">Enables an element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:disable">Base:disable ()</a></td>
+	<td class="summary">Disables an element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getSkin">Base:getSkin ()</a></td>
+	<td class="summary">Returns the compiled skin of an element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:addSkin">Base:addSkin (skin)</a></td>
+	<td class="summary">Adds a skin to an element.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:isVisible">Base:isVisible ()</a></td>
+	<td class="summary">Returns whether or not an element is visible</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:setVisible">Base:setVisible (v)</a></td>
+	<td class="summary">Sets whether ot not an element is visible</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:show">Base:show ()</a></td>
+	<td class="summary">Shows an element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:hide">Base:hide ()</a></td>
+	<td class="summary">Hides an element</td>
+	</tr>
+</table>
+<h2><a href="#Absolute_Positioning">Absolute Positioning </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Base:resolveAnchor">Base:resolveAnchor (anchor, refX, refY)</a></td>
+	<td class="summary">Resolve a position based on an anchor.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getAbsoluteX">Base:getAbsoluteX ()</a></td>
+	<td class="summary">Returns the absolute X coordinate of an element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getAbsoluteY">Base:getAbsoluteY ()</a></td>
+	<td class="summary">Returns the absolute Y coordinate of an element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getAbsoluteWidth">Base:getAbsoluteWidth ()</a></td>
+	<td class="summary">Returns the absolute width of an element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:getAbsoluteHeight">Base:getAbsoluteHeight ()</a></td>
+	<td class="summary">Returns the absolute height of an element</td>
+	</tr>
+</table>
+<h2><a href="#L__VE_Callbacks">LÖVE Callbacks </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Base:callback">Base:callback (...)</a></td>
+	<td class="summary">Generic LÖVE callback.</td>
+	</tr>
+</table>
+<h2><a href="#Silicone_Callbacks">Silicone Callbacks </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Base:onLeft">Base:onLeft ()</a></td>
+	<td class="summary">Callback for leftward navigation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:onRight">Base:onRight ()</a></td>
+	<td class="summary">Callback for rightward navigation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:onUp">Base:onUp ()</a></td>
+	<td class="summary">Callback for upward navigation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:onDown">Base:onDown ()</a></td>
+	<td class="summary">Callback for downward navigation</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:onConfirm">Base:onConfirm ()</a></td>
+	<td class="summary">Callback for the "confirm" action</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:onCancel">Base:onCancel ()</a></td>
+	<td class="summary">Callback for the "cancel" action</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header has-description"><a name="Internal"></a>Internal </h2>
+
+          <div class="section-description">
+           Internal methods
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Base:initialize"></a>
+    <strong>Base:initialize (spec, root)</strong>
+    </dt>
+    <dd>
+    Initializes a Base element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Menu specification
+        </li>
+        <li><span class="parameter">root</span>
+            <span class="types"><a class="type" href="../classes/Root.html#">Root</a></span>
+         Root element
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:_compile_skin"></a>
+    <strong>Base:_compile_skin ()</strong>
+    </dt>
+    <dd>
+    Compiles an elements skin
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Querying"></a>Querying </h2>
+
+          <div class="section-description">
+           Methods for finding other elements
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Base:find"></a>
+    <strong>Base:find (key)</strong>
+    </dt>
+    <dd>
+    Finds an element with the given name.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The name of the element
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Base.html#">Base</a> or <span class="type">nil</span></span>
+        The element
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Root.html#Root:find">Root.find</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Focus"></a>Focus </h2>
+
+          <div class="section-description">
+           Methods related to element focus
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Base:canFocus"></a>
+    <strong>Base:canFocus ()</strong>
+    </dt>
+    <dd>
+    Returns whether or not the current element can receive focus which,
+ by default, is determined by whether or not the element is visible
+ and enabled
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        Whether or not the element can receive focus
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:focus"></a>
+    <strong>Base:focus ()</strong>
+    </dt>
+    <dd>
+    Puts an element in focus
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:hasFocus"></a>
+    <strong>Base:hasFocus ()</strong>
+    </dt>
+    <dd>
+    Returns whether or not an element has focus
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        Whether or not an element has focus
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:addChild"></a>
+    <strong>Base:addChild (child)</strong>
+    </dt>
+    <dd>
+    Adds a child to an element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">child</span>
+            <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+         The element to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+        The child that was added
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:removeChild"></a>
+    <strong>Base:removeChild (The)</strong>
+    </dt>
+    <dd>
+    Removes a child from an element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">The</span>
+            <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+         child to remove
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+        The child that was removed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:remove"></a>
+    <strong>Base:remove ()</strong>
+    </dt>
+    <dd>
+    Removes an element from its parent.  If the element is currently
+ in focus, it's also popped from the <a href="../classes/Root.html#Root:popFocus">focus stack</a>.
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Getters_Setters"></a>Getters/Setters </h2>
+
+          <div class="section-description">
+           Getters and setters for element properties
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Base:getName"></a>
+    <strong>Base:getName ()</strong>
+    </dt>
+    <dd>
+    Returns an element's name
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a> or <span class="type">nil</span></span>
+        name
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setName"></a>
+    <strong>Base:setName (v)</strong>
+    </dt>
+    <dd>
+    Sets an element's name
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+         name
+        </li>
+    </ul>
+
+
+    <h3>Raises:</h3>
+    error if name is taken
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getX"></a>
+    <strong>Base:getX ()</strong>
+    </dt>
+    <dd>
+    Returns an element's X position
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        X position
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setX"></a>
+    <strong>Base:setX (v)</strong>
+    </dt>
+    <dd>
+    Sets an element's X position.
+ Coordinates are relative to the size of the element's parent.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+            <span class="types"><span class="type">number</span></span>
+         X position
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getY"></a>
+    <strong>Base:getY ()</strong>
+    </dt>
+    <dd>
+    Returns an element's Y position
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        Y position
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setY"></a>
+    <strong>Base:setY (v)</strong>
+    </dt>
+    <dd>
+    Sets an element's Y position.
+ Coordinates are relative to the size of the element's parent.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+            <span class="types"><span class="type">number</span></span>
+         Y position
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getPosition"></a>
+    <strong>Base:getPosition ()</strong>
+    </dt>
+    <dd>
+    Returns an element's position
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        X position</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        Y position</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setPosition"></a>
+    <strong>Base:setPosition (x, y)</strong>
+    </dt>
+    <dd>
+    Sets an element's position
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X position
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y position
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getXOffset"></a>
+    <strong>Base:getXOffset ()</strong>
+    </dt>
+    <dd>
+    Returns an element's X offset
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        X offset
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setXOffset"></a>
+    <strong>Base:setXOffset (v)</strong>
+    </dt>
+    <dd>
+    Sets an element's X offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+            <span class="types"><span class="type">number</span></span>
+         X offset
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getYOffset"></a>
+    <strong>Base:getYOffset ()</strong>
+    </dt>
+    <dd>
+    Returns an element's Y offset
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        Y offset
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setYOffset"></a>
+    <strong>Base:setYOffset (v)</strong>
+    </dt>
+    <dd>
+    Sets an element's Y offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+            <span class="types"><span class="type">number</span></span>
+         Y offset
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setOffsets"></a>
+    <strong>Base:setOffsets (x, y)</strong>
+    </dt>
+    <dd>
+    Sets an element's offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X offset
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y offset
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getWidth"></a>
+    <strong>Base:getWidth ()</strong>
+    </dt>
+    <dd>
+    Returns an element's width
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        width
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setWidth"></a>
+    <strong>Base:setWidth (v)</strong>
+    </dt>
+    <dd>
+    Sets an element's width.
+ Size is relative to the size of the element's parent.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+            <span class="types"><span class="type">number</span></span>
+         width
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getHeight"></a>
+    <strong>Base:getHeight ()</strong>
+    </dt>
+    <dd>
+    Returns an element's height
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        height
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setHeight"></a>
+    <strong>Base:setHeight (v)</strong>
+    </dt>
+    <dd>
+    Sets an element's height.
+ Size is relative to the size of the element's parent.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+            <span class="types"><span class="type">number</span></span>
+         height
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getDimensions"></a>
+    <strong>Base:getDimensions ()</strong>
+    </dt>
+    <dd>
+    Returns an element's dimensions
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        width</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        height</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setDimensions"></a>
+    <strong>Base:setDimensions (w, h)</strong>
+    </dt>
+    <dd>
+    Sets an element's dimensions
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">w</span>
+            <span class="types"><span class="type">number</span></span>
+         width
+        </li>
+        <li><span class="parameter">h</span>
+            <span class="types"><span class="type">number</span></span>
+         height
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getWidthOffset"></a>
+    <strong>Base:getWidthOffset ()</strong>
+    </dt>
+    <dd>
+    Returns an element's width offset
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        width offset
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setWidthOffset"></a>
+    <strong>Base:setWidthOffset (w)</strong>
+    </dt>
+    <dd>
+    Sets an element's width offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">w</span>
+            <span class="types"><span class="type">number</span></span>
+         width offset
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getHeightOffset"></a>
+    <strong>Base:getHeightOffset ()</strong>
+    </dt>
+    <dd>
+    Returns an element's height offset
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        height offset
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setHeightOffset"></a>
+    <strong>Base:setHeightOffset (h)</strong>
+    </dt>
+    <dd>
+    Sets an element's height offset
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">h</span>
+            <span class="types"><span class="type">number</span></span>
+         height offset
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getWHOffsets"></a>
+    <strong>Base:getWHOffsets ()</strong>
+    </dt>
+    <dd>
+    Returns an element's width/height offsets
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        width offset</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        height offset</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setWHOffsets"></a>
+    <strong>Base:setWHOffsets (w, h)</strong>
+    </dt>
+    <dd>
+    Sets an element's width/height offsets
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">w</span>
+            <span class="types"><span class="type">number</span></span>
+         width offset
+        </li>
+        <li><span class="parameter">h</span>
+            <span class="types"><span class="type">number</span></span>
+         height offset
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getOrigin"></a>
+    <strong>Base:getOrigin ()</strong>
+    </dt>
+    <dd>
+    Gets an element's origin
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        origin
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setOrigin"></a>
+    <strong>Base:setOrigin (v)</strong>
+    </dt>
+    <dd>
+    Sets an element's origin.
+ The origin is the point on an element that it will be referenced from when
+ drawn.</p>
+
+<p> Possible values are
+ * top-left
+ * top-center
+ * top-right
+ * left
+ * center
+ * right
+ * bottom-left
+ * bottom-center
+ * bottom-right</p>
+
+<p> Default: <code>"top-left"</code>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         origin
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getAnchor"></a>
+    <strong>Base:getAnchor ()</strong>
+    </dt>
+    <dd>
+    Gets an element's anchor
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+        anchor
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setAnchor"></a>
+    <strong>Base:setAnchor (v)</strong>
+    </dt>
+    <dd>
+    Sets an element's anchor.
+ The anchor is the point on an element's parent that its position will be
+ referenced from when drawn.</p>
+
+<p> Possible values are
+ * top-left
+ * top-center
+ * top-right
+ * left
+ * center
+ * right
+ * bottom-left
+ * bottom-center
+ * bottom-right</p>
+
+<p> Default: <code>"top-left"</code>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         anchor
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getParent"></a>
+    <strong>Base:getParent ()</strong>
+    </dt>
+    <dd>
+    Returns an element's parent
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+        parent
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setParent"></a>
+    <strong>Base:setParent (v)</strong>
+    </dt>
+    <dd>
+    Sets an element's parent.
+ When called, the element is removed from its current parent and added
+ to the new one.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+            <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+         parent
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:isEnabled"></a>
+    <strong>Base:isEnabled ()</strong>
+    </dt>
+    <dd>
+    Returns whether or not an element is enabled.
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        enabled
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setEnabled"></a>
+    <strong>Base:setEnabled (v)</strong>
+    </dt>
+    <dd>
+    Sets whether or not an element is enabled
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+            <span class="types"><span class="type">bool</span></span>
+         enabled
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:enable"></a>
+    <strong>Base:enable ()</strong>
+    </dt>
+    <dd>
+    Enables an element
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:disable"></a>
+    <strong>Base:disable ()</strong>
+    </dt>
+    <dd>
+    Disables an element
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getSkin"></a>
+    <strong>Base:getSkin ()</strong>
+    </dt>
+    <dd>
+    Returns the compiled skin of an element
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+        skin
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:addSkin"></a>
+    <strong>Base:addSkin (skin)</strong>
+    </dt>
+    <dd>
+    Adds a skin to an element.
+ Skins are flattened together from an internal list of skins.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">skin</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         skin
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:isVisible"></a>
+    <strong>Base:isVisible ()</strong>
+    </dt>
+    <dd>
+    Returns whether or not an element is visible
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        visible
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:setVisible"></a>
+    <strong>Base:setVisible (v)</strong>
+    </dt>
+    <dd>
+    Sets whether ot not an element is visible
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">v</span>
+            <span class="types"><span class="type">bool</span></span>
+         visible
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:show"></a>
+    <strong>Base:show ()</strong>
+    </dt>
+    <dd>
+    Shows an element
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:hide"></a>
+    <strong>Base:hide ()</strong>
+    </dt>
+    <dd>
+    Hides an element
+
+
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Absolute_Positioning"></a>Absolute Positioning </h2>
+
+          <div class="section-description">
+           Methods for finding the absolute position of an element
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Base:resolveAnchor"></a>
+    <strong>Base:resolveAnchor (anchor, refX, refY)</strong>
+    </dt>
+    <dd>
+    Resolve a position based on an anchor.
+ Using an anchor identifier and a reference point, this method resolves
+ to an absolute position.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">anchor</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         anchor
+        </li>
+        <li><span class="parameter">refX</span>
+            <span class="types"><span class="type">number</span></span>
+         reference X coordinate
+        </li>
+        <li><span class="parameter">refY</span>
+            <span class="types"><span class="type">number</span></span>
+         reference Y coordinate
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        absolute X coordinate</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        absolute Y coordinate</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getAbsoluteX"></a>
+    <strong>Base:getAbsoluteX ()</strong>
+    </dt>
+    <dd>
+    Returns the absolute X coordinate of an element
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        absolute X coordinate
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getAbsoluteY"></a>
+    <strong>Base:getAbsoluteY ()</strong>
+    </dt>
+    <dd>
+    Returns the absolute Y coordinate of an element
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        absolute Y coordinate
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getAbsoluteWidth"></a>
+    <strong>Base:getAbsoluteWidth ()</strong>
+    </dt>
+    <dd>
+    Returns the absolute width of an element
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        absolute width
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:getAbsoluteHeight"></a>
+    <strong>Base:getAbsoluteHeight ()</strong>
+    </dt>
+    <dd>
+    Returns the absolute height of an element
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        absolute height
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="L__VE_Callbacks"></a>LÖVE Callbacks </h2>
+
+          <div class="section-description">
+           LÖVE callback handlers for Silicone elements
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Base:callback"></a>
+    <strong>Base:callback (...)</strong>
+    </dt>
+    <dd>
+    Generic LÖVE callback.
+ The Base element implements all of LÖVE's callbacks so elements may
+ make use of them. To use them, call them like you would a LÖVE callback.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="comment">-- Calling update on a Silicone element
+</span> <span class="keyword">local</span> base = Base()
+ <span class="keyword">function</span> love.update(dt)
+   base:update(dt)
+ <span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Silicone_Callbacks"></a>Silicone Callbacks </h2>
+
+          <div class="section-description">
+           Callbacks for menu functions
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Base:onLeft"></a>
+    <strong>Base:onLeft ()</strong>
+    </dt>
+    <dd>
+    Callback for leftward navigation
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:onRight"></a>
+    <strong>Base:onRight ()</strong>
+    </dt>
+    <dd>
+    Callback for rightward navigation
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:onUp"></a>
+    <strong>Base:onUp ()</strong>
+    </dt>
+    <dd>
+    Callback for upward navigation
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:onDown"></a>
+    <strong>Base:onDown ()</strong>
+    </dt>
+    <dd>
+    Callback for downward navigation
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:onConfirm"></a>
+    <strong>Base:onConfirm ()</strong>
+    </dt>
+    <dd>
+    Callback for the "confirm" action
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:onCancel"></a>
+    <strong>Base:onCancel ()</strong>
+    </dt>
+    <dd>
+    Callback for the "cancel" action
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2015-03-11 16:13:52 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
