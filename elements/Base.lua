@@ -628,8 +628,7 @@ function Base:draw()
   end
 
   for i, v in ipairs(self.children) do
-    if v:isEnabled() then
-      v:draw()
+    v:draw()
   end
 end
 
