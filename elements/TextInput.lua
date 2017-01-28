@@ -41,9 +41,6 @@ function TextInput:setText(text)
   self.text = string.sub(text, 1, self.length)
 end
 
----
--- Gets a TextInput's
-
 function TextInput:onConfirm()
   self.text = string.gsub(self._compiled_skin.TextInput._faceText, "%s+$", "")
   self._compiled_skin.TextInput._faceText = self.text
@@ -67,7 +64,7 @@ end
 function TextInput:focus()
   Base.focus(self)
   self._keyRepeat = love.keyboard.hasKeyRepeat()
-  love.keyboard.setKeyRepeat(enable)
+  love.keyboard.setKeyRepeat("enable")
 end
 
 ---
@@ -83,6 +80,23 @@ end
 ---
 -- Does nothing
 function TextInput:onRight()
+end
+
+---
+-- Callback for the "MouseDown" action
+function TextInput:onMouseDown()
+  if self._root:peekFocus() ~= self then
+    self:focus()
+  end
+end
+
+---
+-- Callback for the "LoseFocus" action. ``TextInput:onCancel`` cannot be called
+-- here as it modifies the root's focus stack.
+function TextInput:onLoseFocus()
+  if self._root:peekFocus(true) == self then return end
+  self._compiled_skin.TextInput._faceText = self.text
+  love.keyboard.setKeyRepeat(self._keyRepeat)
 end
 
 ---

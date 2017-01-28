@@ -30,16 +30,11 @@
   <li><a href="../readme.html">Index</a></li>
 </ul>
 
-<h2>Contents</h2>
-<ul>
-<li><a href="#Usage">Usage </a></li>
-<li><a href="#Skinning">Skinning </a></li>
-</ul>
 
 
-<h2>Topics</h2>
+<h2>Examples</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
-  <li><strong>readme</strong></li>
+  <li><strong>main.lua</strong></li>
 </ul>
 <h2>Modules</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
@@ -60,26 +55,21 @@
   <li><a href="../classes/Text.html">Text</a></li>
   <li><a href="../classes/TextInput.html">TextInput</a></li>
 </ul>
-<h2>Examples</h2>
+<h2>Topics</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
-  <li><a href="../examples/main.lua.html">main.lua</a></li>
+  <li><a href="../topics/readme.md.html">readme</a></li>
 </ul>
 
 </div>
 
 <div id="content">
 
-
-<h1>Silicone</h1>
-<p>Silicone is a key controlled event-driven UI for the LÖVE framework. Silicone was designed with gamepads in mind for games such as RPGs where the player will spend most of their time on the directional keys.</p>
-
-<p><a name="Usage"></a></p>
-<h2>Usage</h2>
-<p>The recommended method for creating menus with Silicone is shown below. This method utilizes a basic table structure to create what might normally be done with multiple getters and setters in other frameworks. Ideally, you would use something like a JSON parser to load menus from an external file. This functionality has not been implemented, however, as the preferred markup should be determined by the developer.</p>
-
-<p>In this example, we show how to build a very simple menu with a panel, a button, and a text label for the button that will change from "Button" to "Hello!" when the button is pressed.</p>
-
+    <h2>main.lua</h2>
 <pre>
+<span class="comment">-- Create a simple menu containing a panel which contains a button.
+</span><span class="comment">-- The button should start with the text "Button" and change its text
+</span><span class="comment">-- to "Hello!" when it has been pressed.
+</span>
 <span class="keyword">local</span> Silicone = <span class="global">require</span>(<span class="string">"Silicone"</span>)
 
 <span class="keyword">local</span> Root = Silicone({
@@ -138,14 +128,18 @@ Root:focus()
     Root:doConfirm()
   <span class="keyword">end</span>
 <span class="keyword">end</span>
-</pre>
 
+<span class="keyword">function</span> love.mousemoved(x, y, dx, dy, istouch)
+  Root:doMouseMove(x, y, dx, dy, istouch)
+<span class="keyword">end</span>
 
-<p>As you can see, we create a Root object and define its structure in a table. In this table, we can nest the Root's children so that they will be created at the same time as the Root. Most, if not all, of an element's attributes can be set through this structure sans attributes that may require some additional processing such as skins.</p>
+<span class="keyword">function</span> love.mousepressed(x, y, button, istouch)
+  Root:doMouseDown(x, y, button, istouch)
+<span class="keyword">end</span>
 
-<p><a name="Skinning"></a></p>
-<h2>Skinning</h2>
-<p>Silicone can be configured to look and feel any way you like because the logic behind the drawing of an element has been abstracted away into skins. The default skin is a very basic resourceless skin that does little more than display the elements and provide some visual feedback upon interaction. Because of this, it is recommended that you design your own skin to suit your needs.</p>
+<span class="keyword">function</span> love.mousereleased(x, y, button, istouch)
+  Root:doMouseUp(x, y, button, istouch)
+<span class="keyword">end</span></pre>
 
 
 </div> <!-- id="content" -->

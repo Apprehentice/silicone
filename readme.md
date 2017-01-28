@@ -1,6 +1,6 @@
 Silicone
 ========
-Silicone is a key controlled event-driven UI for the LÖVE framework. Silicone was designed with gamepads in mind for games such as RPGs where the player will spend most of their time on the directional keys.
+Silicone is a mouse and key controlled event-driven UI for the LÖVE framework. Silicone was designed with gamepads in mind for games such as RPGs where the player will spend most of their time on the directional keys.
 
 ## Usage ##
 The recommended method for creating menus with Silicone is shown below. This method utilizes a basic table structure to create what might normally be done with multiple getters and setters in other frameworks. Ideally, you would use something like a JSON parser to load menus from an external file. This functionality has not been implemented, however, as the preferred markup should be determined by the developer.

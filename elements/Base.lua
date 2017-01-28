@@ -792,4 +792,78 @@ function Base:onCancel()
   end
 end
 
+---
+-- Finds the element, within Base, at the given position, prioritizing children
+function Base:findElementAtPosition(x, y)
+  if not (x > self:getAbsoluteX() and
+    y > self:getAbsoluteY() and
+    x < (self:getAbsoluteX() + self:getAbsoluteWidth()) and
+    y < (self:getAbsoluteY() + self:getAbsoluteHeight())) then
+      return end
+
+  local child = self
+  for _, c in ipairs(self.children) do
+    local res = c:findElementAtPosition(x, y)
+    if res then
+      child = res
+      break
+    end
+  end
+  return child
+end
+
+---
+-- Finds and calls ``onMouseMove`` at the given position
+function Base:doMouseMove(x, y)
+  local child = self:findElementAtPosition(x, y)
+  if child then child:onMouseMove(x, y) end
+end
+
+---
+-- Finds and calls ``onMouseDown`` at the given position
+function Base:doMouseDown(x, y, button)
+  local child = self:findElementAtPosition(x, y)
+  if child then child:onMouseDown(x, y, button) end
+end
+
+---
+-- Finds and calls ``onMouseUp`` at the given position
+function Base:doMouseUp(x, y, button)
+  local child = self:findElementAtPosition(x, y)
+  if child then child:onMouseUp(x, y, button) end
+end
+
+---
+-- Callback for the "mouseMove" action
+function Base:onMouseMove(x, y, dx, dy, istouch)
+  if self._parent then
+    self._parent:onMouseMove(x, y, dx, dy, istouch)
+  end
+end
+
+---
+-- Callback for the "mouseDown" action
+function Base:onMouseDown(x, y, button, istouch)
+  if self._parent then
+    self._parent:onMouseDown(x, y, button, istouch)
+  end
+end
+
+---
+-- Callback for the "mouseUp" action
+function Base:onMouseUp(x, y, button, istouch)
+  if self._parent then
+    self._parent:onMouseUp(x, y, button, istouch)
+  end
+end
+
+---
+-- Callback for the "loseFocus" action
+function Base:onLoseFocus()
+  if self._root:peekFocus(true) == self then return end
+  if self._parent then
+    self._parent:onLoseFocus()
+  end
+end
+
 return Base

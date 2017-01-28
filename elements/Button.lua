@@ -93,4 +93,18 @@ function Button:onConfirm()
   self:press()
 end
 
+---
+-- Callback for the "MouseMove" action
+function Button:onMouseMove()
+  if self._root:peekFocus() ~= self then
+    self:focus()
+  end
+end
+
+---
+-- Callback for the "MouseDown" action. Calls ```Button:onConfirm``` by default
+function Button:onMouseDown()
+  self:onConfirm()
+end
+
 return Button

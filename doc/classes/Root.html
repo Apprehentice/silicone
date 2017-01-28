@@ -33,8 +33,8 @@
 <h2>Contents</h2>
 <ul>
 <li><a href="#Internal">Internal </a></li>
-<li><a href="#Querying">Querying </a></li>
 <li><a href="#Getters_Setters">Getters/Setters </a></li>
+<li><a href="#Querying">Querying </a></li>
 <li><a href="#Focus_Stack">Focus Stack </a></li>
 <li><a href="#Events">Events </a></li>
 <li><a href="#Callbacks">Callbacks </a></li>
@@ -43,6 +43,7 @@
 
 <h2>Classes</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/Animation.html">Animation</a></li>
   <li><a href="../classes/Base.html">Base</a></li>
   <li><a href="../classes/Button.html">Button</a></li>
   <li><a href="../classes/Canvas.html">Canvas</a></li>
@@ -65,7 +66,7 @@
 </ul>
 <h2>Examples</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
-  <li><a href="../examples/simple.lua.html">simple.lua</a></li>
+  <li><a href="../examples/main.lua.html">main.lua</a></li>
 </ul>
 
 </div>
@@ -96,13 +97,6 @@
 	<td class="summary">Reorders the focus stack so that it can be indexed.</td>
 	</tr>
 </table>
-<h2><a href="#Querying">Querying </a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" nowrap><a href="#Root:find">Root:find (key)</a></td>
-	<td class="summary">Finds an element with the given name.</td>
-	</tr>
-</table>
 <h2><a href="#Getters_Setters">Getters/Setters </a></h2>
 <table class="function_list">
 	<tr>
@@ -120,6 +114,13 @@
 	<tr>
 	<td class="name" nowrap><a href="#Root:getAbsoluteY">Root:getAbsoluteY ()</a></td>
 	<td class="summary">Returns a Root element's Y coordinate (usually 0)</td>
+	</tr>
+</table>
+<h2><a href="#Querying">Querying </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Root:find">Root:find (key)</a></td>
+	<td class="summary">Finds an element with the given name.</td>
 	</tr>
 </table>
 <h2><a href="#Focus_Stack">Focus Stack </a></h2>
@@ -176,6 +177,22 @@
 <table class="function_list">
 	<tr>
 	<td class="name" nowrap><a href="#Root:onFocus">Root:onFocus ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:onLoseFocus">Root:onLoseFocus ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:onMouseMove">Root:onMouseMove ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:onMouseDown">Root:onMouseDown ()</a></td>
+	<td class="summary">Does nothing</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Root:onMouseUp">Root:onMouseUp ()</a></td>
 	<td class="summary">Does nothing</td>
 	</tr>
 	<tr>
@@ -274,40 +291,6 @@
 
 </dd>
 </dl>
-    <h2 class="section-header has-description"><a name="Querying"></a>Querying </h2>
-
-          <div class="section-description">
-           Methods for finding other elements
-          </div>
-    <dl class="function">
-    <dt>
-    <a name = "Root:find"></a>
-    <strong>Root:find (key)</strong>
-    </dt>
-    <dd>
-    Finds an element with the given name.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">key</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         The name of the element
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/Base.html#">Base</a> or <span class="type">nil</span></span>
-        The element
-    </ol>
-
-
-
-
-</dd>
-</dl>
     <h2 class="section-header has-description"><a name="Getters_Setters"></a>Getters/Setters </h2>
 
           <div class="section-description">
@@ -388,6 +371,40 @@
 
            <span class="types"><span class="type">number</span></span>
         The Root element's Y coordinate
+    </ol>
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Querying"></a>Querying </h2>
+
+          <div class="section-description">
+           Methods for finding other elements
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Root:find"></a>
+    <strong>Root:find (key)</strong>
+    </dt>
+    <dd>
+    Finds an element with the given name.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The name of the element
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Base.html#">Base</a> or <span class="type">nil</span></span>
+        The element
     </ol>
 
 
@@ -632,6 +649,62 @@
 
 </dd>
     <dt>
+    <a name = "Root:onLoseFocus"></a>
+    <strong>Root:onLoseFocus ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:onMouseMove"></a>
+    <strong>Root:onMouseMove ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:onMouseDown"></a>
+    <strong>Root:onMouseDown ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Root:onMouseUp"></a>
+    <strong>Root:onMouseUp ()</strong>
+    </dt>
+    <dd>
+    Does nothing
+
+
+
+
+
+
+
+</dd>
+    <dt>
     <a name = "Root:onLeft"></a>
     <strong>Root:onLeft ()</strong>
     </dt>
@@ -722,7 +795,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
-<i style="float:right;">Last updated 2015-03-11 16:13:52 </i>
+<i style="float:right;">Last updated 2017-01-28 05:09:52 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

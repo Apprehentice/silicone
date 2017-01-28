@@ -70,12 +70,15 @@ end
 function Root:pushFocus(element, norestack)
   assert(type(element) == "table" and element["class"] and element["class"]["super"] and element.class.super == Base, "bad argument #1 to 'pushFocus' (not a menu element)")
   if not norestack then self:_restack_focus() end
+  local oldFocus = self._focus_stack[1]
 
   if self._focus_stack[2] == element then
     self:popFocus(true)
+  else
+    table.insert(self._focus_stack, 1, element)
   end
 
-  table.insert(self._focus_stack, 1, element)
+  if oldFocus then oldFocus:onLoseFocus() end
 end
 
 ---
@@ -84,7 +87,9 @@ end
 -- @treturn Base The popped element
 function Root:popFocus(norestack)
   if not norestack then self:_restack_focus() end
-  return table.remove(self._focus_stack, 1)
+  local oldFocus = table.remove(self._focus_stack, 1)
+  if oldFocus then oldFocus:onLoseFocus() end
+  return oldFocus
 end
 
 ---
@@ -191,6 +196,26 @@ end
 ---
 -- Does nothing
 function Root:onFocus()
+end
+
+---
+-- Does nothing
+function Root:onLoseFocus()
+end
+
+---
+-- Does nothing
+function Root:onMouseMove()
+end
+
+---
+-- Does nothing
+function Root:onMouseDown()
+end
+
+---
+-- Does nothing
+function Root:onMouseUp()
 end
 
 ---

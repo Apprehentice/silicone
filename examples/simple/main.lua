@@ -60,3 +60,15 @@ function love.keypressed(key)
     Root:doConfirm()
   end
 end
+
+function love.mousemoved(x, y, dx, dy, istouch)
+  Root:doMouseMove(x, y, dx, dy, istouch)
+end
+
+function love.mousepressed(x, y, button, istouch)
+  Root:doMouseDown(x, y, button, istouch)
+end
+
+function love.mousereleased(x, y, button, istouch)
+  Root:doMouseUp(x, y, button, istouch)
+end

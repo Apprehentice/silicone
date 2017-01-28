@@ -33,17 +33,18 @@
 <h2>Contents</h2>
 <ul>
 <li><a href="#Internal">Internal </a></li>
+<li><a href="#Getters_Setters">Getters/Setters </a></li>
+<li><a href="#L__VE_Callbacks">LÖVE Callbacks </a></li>
 <li><a href="#Querying">Querying </a></li>
 <li><a href="#Focus">Focus </a></li>
-<li><a href="#Getters_Setters">Getters/Setters </a></li>
 <li><a href="#Absolute_Positioning">Absolute Positioning </a></li>
-<li><a href="#L__VE_Callbacks">LÖVE Callbacks </a></li>
 <li><a href="#Silicone_Callbacks">Silicone Callbacks </a></li>
 </ul>
 
 
 <h2>Classes</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../classes/Animation.html">Animation</a></li>
   <li><strong>Base</strong></li>
   <li><a href="../classes/Button.html">Button</a></li>
   <li><a href="../classes/Canvas.html">Canvas</a></li>
@@ -66,7 +67,7 @@
 </ul>
 <h2>Examples</h2>
 <ul class="$(kind=='Topics' and '' or 'nowrap'">
-  <li><a href="../examples/simple.lua.html">simple.lua</a></li>
+  <li><a href="../examples/main.lua.html">main.lua</a></li>
 </ul>
 
 </div>
@@ -89,42 +90,6 @@
 	<tr>
 	<td class="name" nowrap><a href="#Base:_compile_skin">Base:_compile_skin ()</a></td>
 	<td class="summary">Compiles an elements skin</td>
-	</tr>
-</table>
-<h2><a href="#Querying">Querying </a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" nowrap><a href="#Base:find">Base:find (key)</a></td>
-	<td class="summary">Finds an element with the given name.</td>
-	</tr>
-</table>
-<h2><a href="#Focus">Focus </a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" nowrap><a href="#Base:canFocus">Base:canFocus ()</a></td>
-	<td class="summary">Returns whether or not the current element can receive focus which,
- by default, is determined by whether or not the element is visible
- and enabled</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Base:focus">Base:focus ()</a></td>
-	<td class="summary">Puts an element in focus</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Base:hasFocus">Base:hasFocus ()</a></td>
-	<td class="summary">Returns whether or not an element has focus</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Base:addChild">Base:addChild (child)</a></td>
-	<td class="summary">Adds a child to an element</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Base:removeChild">Base:removeChild (The)</a></td>
-	<td class="summary">Removes a child from an element</td>
-	</tr>
-	<tr>
-	<td class="name" nowrap><a href="#Base:remove">Base:remove ()</a></td>
-	<td class="summary">Removes an element from its parent.</td>
 	</tr>
 </table>
 <h2><a href="#Getters_Setters">Getters/Setters </a></h2>
@@ -294,6 +259,49 @@
 	<td class="summary">Hides an element</td>
 	</tr>
 </table>
+<h2><a href="#L__VE_Callbacks">LÖVE Callbacks </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Base:callback">Base:callback (...)</a></td>
+	<td class="summary">Generic LÖVE callback.</td>
+	</tr>
+</table>
+<h2><a href="#Querying">Querying </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Base:find">Base:find (key)</a></td>
+	<td class="summary">Finds an element with the given name.</td>
+	</tr>
+</table>
+<h2><a href="#Focus">Focus </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Base:canFocus">Base:canFocus ()</a></td>
+	<td class="summary">Returns whether or not the current element can receive focus which,
+ by default, is determined by whether or not the element is visible
+ and enabled</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:focus">Base:focus ()</a></td>
+	<td class="summary">Puts an element in focus</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:hasFocus">Base:hasFocus ()</a></td>
+	<td class="summary">Returns whether or not an element has focus</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:addChild">Base:addChild (child)</a></td>
+	<td class="summary">Adds a child to an element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:removeChild">Base:removeChild (The)</a></td>
+	<td class="summary">Removes a child from an element</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:remove">Base:remove ()</a></td>
+	<td class="summary">Removes an element from its parent.</td>
+	</tr>
+</table>
 <h2><a href="#Absolute_Positioning">Absolute Positioning </a></h2>
 <table class="function_list">
 	<tr>
@@ -315,13 +323,6 @@
 	<tr>
 	<td class="name" nowrap><a href="#Base:getAbsoluteHeight">Base:getAbsoluteHeight ()</a></td>
 	<td class="summary">Returns the absolute height of an element</td>
-	</tr>
-</table>
-<h2><a href="#L__VE_Callbacks">LÖVE Callbacks </a></h2>
-<table class="function_list">
-	<tr>
-	<td class="name" nowrap><a href="#Base:callback">Base:callback (...)</a></td>
-	<td class="summary">Generic LÖVE callback.</td>
 	</tr>
 </table>
 <h2><a href="#Silicone_Callbacks">Silicone Callbacks </a></h2>
@@ -349,6 +350,38 @@
 	<tr>
 	<td class="name" nowrap><a href="#Base:onCancel">Base:onCancel ()</a></td>
 	<td class="summary">Callback for the "cancel" action</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:findElementAtPosition">Base:findElementAtPosition (x, y)</a></td>
+	<td class="summary">Finds the element, within Base, at the given position, prioritizing children</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:doMouseMove">Base:doMouseMove (x, y)</a></td>
+	<td class="summary">Finds and calls <code>onMouseMove</code> at the given position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:doMouseDown">Base:doMouseDown (x, y, button)</a></td>
+	<td class="summary">Finds and calls <code>onMouseDown</code> at the given position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:doMouseUp">Base:doMouseUp (x, y, button)</a></td>
+	<td class="summary">Finds and calls <code>onMouseUp</code> at the given position</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:onMouseMove">Base:onMouseMove (x, y, dx, dy, istouch)</a></td>
+	<td class="summary">Callback for the "mouseMove" action</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:onMouseDown">Base:onMouseDown (x, y, button, istouch)</a></td>
+	<td class="summary">Callback for the "mouseDown" action</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:onMouseUp">Base:onMouseUp (x, y, button, istouch)</a></td>
+	<td class="summary">Callback for the "mouseUp" action</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Base:onLoseFocus">Base:onLoseFocus ()</a></td>
+	<td class="summary">Callback for the "loseFocus" action</td>
 	</tr>
 </table>
 
@@ -393,176 +426,6 @@
     </dt>
     <dd>
     Compiles an elements skin
-
-
-
-
-
-
-
-</dd>
-</dl>
-    <h2 class="section-header has-description"><a name="Querying"></a>Querying </h2>
-
-          <div class="section-description">
-           Methods for finding other elements
-          </div>
-    <dl class="function">
-    <dt>
-    <a name = "Base:find"></a>
-    <strong>Base:find (key)</strong>
-    </dt>
-    <dd>
-    Finds an element with the given name.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">key</span>
-            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
-         The name of the element
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/Base.html#">Base</a> or <span class="type">nil</span></span>
-        The element
-    </ol>
-
-
-    <h3>See also:</h3>
-    <ul>
-         <a href="../classes/Root.html#Root:find">Root.find</a>
-    </ul>
-
-
-</dd>
-</dl>
-    <h2 class="section-header has-description"><a name="Focus"></a>Focus </h2>
-
-          <div class="section-description">
-           Methods related to element focus
-          </div>
-    <dl class="function">
-    <dt>
-    <a name = "Base:canFocus"></a>
-    <strong>Base:canFocus ()</strong>
-    </dt>
-    <dd>
-    Returns whether or not the current element can receive focus which,
- by default, is determined by whether or not the element is visible
- and enabled
-
-
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">bool</span></span>
-        Whether or not the element can receive focus
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Base:focus"></a>
-    <strong>Base:focus ()</strong>
-    </dt>
-    <dd>
-    Puts an element in focus
-
-
-
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Base:hasFocus"></a>
-    <strong>Base:hasFocus ()</strong>
-    </dt>
-    <dd>
-    Returns whether or not an element has focus
-
-
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><span class="type">bool</span></span>
-        Whether or not an element has focus
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Base:addChild"></a>
-    <strong>Base:addChild (child)</strong>
-    </dt>
-    <dd>
-    Adds a child to an element
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">child</span>
-            <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
-         The element to add
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
-        The child that was added
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Base:removeChild"></a>
-    <strong>Base:removeChild (The)</strong>
-    </dt>
-    <dd>
-    Removes a child from an element
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">The</span>
-            <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
-         child to remove
-        </li>
-    </ul>
-
-    <h3>Returns:</h3>
-    <ol>
-
-           <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
-        The child that was removed
-    </ol>
-
-
-
-
-</dd>
-    <dt>
-    <a name = "Base:remove"></a>
-    <strong>Base:remove ()</strong>
-    </dt>
-    <dd>
-    Removes an element from its parent.  If the element is currently
- in focus, it's also popped from the <a href="../classes/Root.html#Root:popFocus">focus stack</a>.
 
 
 
@@ -1457,6 +1320,216 @@
 
 </dd>
 </dl>
+    <h2 class="section-header has-description"><a name="L__VE_Callbacks"></a>LÖVE Callbacks </h2>
+
+          <div class="section-description">
+           LÖVE callback handlers for Silicone elements
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Base:callback"></a>
+    <strong>Base:callback (...)</strong>
+    </dt>
+    <dd>
+    Generic LÖVE callback.
+ The Base element implements all of LÖVE's callbacks so elements may
+ make use of them. To use them, call them like you would a LÖVE callback.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="comment">-- Calling update on a Silicone element
+</span> <span class="keyword">local</span> base = Base()
+ <span class="keyword">function</span> love.update(dt)
+   base:update(dt)
+ <span class="keyword">end</span></pre>
+    </ul>
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Querying"></a>Querying </h2>
+
+          <div class="section-description">
+           Methods for finding other elements
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Base:find"></a>
+    <strong>Base:find (key)</strong>
+    </dt>
+    <dd>
+    Finds an element with the given name.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">key</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.4">string</a></span>
+         The name of the element
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Base.html#">Base</a> or <span class="type">nil</span></span>
+        The element
+    </ol>
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="../classes/Root.html#Root:find">Root.find</a>
+    </ul>
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Focus"></a>Focus </h2>
+
+          <div class="section-description">
+           Methods related to element focus
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Base:canFocus"></a>
+    <strong>Base:canFocus ()</strong>
+    </dt>
+    <dd>
+    Returns whether or not the current element can receive focus which,
+ by default, is determined by whether or not the element is visible
+ and enabled
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        Whether or not the element can receive focus
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:focus"></a>
+    <strong>Base:focus ()</strong>
+    </dt>
+    <dd>
+    Puts an element in focus
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:hasFocus"></a>
+    <strong>Base:hasFocus ()</strong>
+    </dt>
+    <dd>
+    Returns whether or not an element has focus
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        Whether or not an element has focus
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:addChild"></a>
+    <strong>Base:addChild (child)</strong>
+    </dt>
+    <dd>
+    Adds a child to an element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">child</span>
+            <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+         The element to add
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+        The child that was added
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:removeChild"></a>
+    <strong>Base:removeChild (The)</strong>
+    </dt>
+    <dd>
+    Removes a child from an element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">The</span>
+            <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+         child to remove
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><a class="type" href="../classes/Base.html#">Base</a></span>
+        The child that was removed
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:remove"></a>
+    <strong>Base:remove ()</strong>
+    </dt>
+    <dd>
+    Removes an element from its parent.  If the element is currently
+ in focus, it's also popped from the <a href="../classes/Root.html#Root:popFocus">focus stack</a>.
+
+
+
+
+
+
+
+</dd>
+</dl>
     <h2 class="section-header has-description"><a name="Absolute_Positioning"></a>Absolute Positioning </h2>
 
           <div class="section-description">
@@ -1584,46 +1657,6 @@
 
 </dd>
 </dl>
-    <h2 class="section-header has-description"><a name="L__VE_Callbacks"></a>LÖVE Callbacks </h2>
-
-          <div class="section-description">
-           LÖVE callback handlers for Silicone elements
-          </div>
-    <dl class="function">
-    <dt>
-    <a name = "Base:callback"></a>
-    <strong>Base:callback (...)</strong>
-    </dt>
-    <dd>
-    Generic LÖVE callback.
- The Base element implements all of LÖVE's callbacks so elements may
- make use of them. To use them, call them like you would a LÖVE callback.
-
-
-    <h3>Parameters:</h3>
-    <ul>
-        <li><span class="parameter">...</span>
-
-
-
-        </li>
-    </ul>
-
-
-
-
-    <h3>Usage:</h3>
-    <ul>
-        <pre class="example">
- <span class="comment">-- Calling update on a Silicone element
-</span> <span class="keyword">local</span> base = Base()
- <span class="keyword">function</span> love.update(dt)
-   base:update(dt)
- <span class="keyword">end</span></pre>
-    </ul>
-
-</dd>
-</dl>
     <h2 class="section-header has-description"><a name="Silicone_Callbacks"></a>Silicone Callbacks </h2>
 
           <div class="section-description">
@@ -1714,6 +1747,254 @@
 
 
 </dd>
+    <dt>
+    <a name = "Base:findElementAtPosition"></a>
+    <strong>Base:findElementAtPosition (x, y)</strong>
+    </dt>
+    <dd>
+    Finds the element, within Base, at the given position, prioritizing children
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+
+
+        </li>
+        <li><span class="parameter">y</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:doMouseMove"></a>
+    <strong>Base:doMouseMove (x, y)</strong>
+    </dt>
+    <dd>
+    Finds and calls <code>onMouseMove</code> at the given position
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+
+
+        </li>
+        <li><span class="parameter">y</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:doMouseDown"></a>
+    <strong>Base:doMouseDown (x, y, button)</strong>
+    </dt>
+    <dd>
+    Finds and calls <code>onMouseDown</code> at the given position
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+
+
+        </li>
+        <li><span class="parameter">y</span>
+
+
+
+        </li>
+        <li><span class="parameter">button</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:doMouseUp"></a>
+    <strong>Base:doMouseUp (x, y, button)</strong>
+    </dt>
+    <dd>
+    Finds and calls <code>onMouseUp</code> at the given position
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+
+
+        </li>
+        <li><span class="parameter">y</span>
+
+
+
+        </li>
+        <li><span class="parameter">button</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:onMouseMove"></a>
+    <strong>Base:onMouseMove (x, y, dx, dy, istouch)</strong>
+    </dt>
+    <dd>
+    Callback for the "mouseMove" action
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+
+
+        </li>
+        <li><span class="parameter">y</span>
+
+
+
+        </li>
+        <li><span class="parameter">dx</span>
+
+
+
+        </li>
+        <li><span class="parameter">dy</span>
+
+
+
+        </li>
+        <li><span class="parameter">istouch</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:onMouseDown"></a>
+    <strong>Base:onMouseDown (x, y, button, istouch)</strong>
+    </dt>
+    <dd>
+    Callback for the "mouseDown" action
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+
+
+        </li>
+        <li><span class="parameter">y</span>
+
+
+
+        </li>
+        <li><span class="parameter">button</span>
+
+
+
+        </li>
+        <li><span class="parameter">istouch</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:onMouseUp"></a>
+    <strong>Base:onMouseUp (x, y, button, istouch)</strong>
+    </dt>
+    <dd>
+    Callback for the "mouseUp" action
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+
+
+
+        </li>
+        <li><span class="parameter">y</span>
+
+
+
+        </li>
+        <li><span class="parameter">button</span>
+
+
+
+        </li>
+        <li><span class="parameter">istouch</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Base:onLoseFocus"></a>
+    <strong>Base:onLoseFocus ()</strong>
+    </dt>
+    <dd>
+    Callback for the "loseFocus" action
+
+
+
+
+
+
+
+</dd>
 </dl>
 
 
@@ -1721,7 +2002,7 @@
 </div> <!-- id="main" -->
 <div id="about">
 <i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
-<i style="float:right;">Last updated 2015-03-11 16:13:52 </i>
+<i style="float:right;">Last updated 2017-01-28 05:09:52 </i>
 </div> <!-- id="about" -->
 </div> <!-- id="container" -->
 </body>

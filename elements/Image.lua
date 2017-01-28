@@ -1,13 +1,13 @@
 ---
--- An image and animation element using the @{love:AnAL} library.
+-- An image element.
 -- @classmod Image
--- @alias MenuImage
+-- @alias Image
 
 local class = require("middleclass")
 local AnAL = require("AnAL")
 local Base = require("silicone.elements.Base")
 
-local MenuImage = class("silicone.Image", Base)
+local Image = class("silicone.Image", Base)
 
 ---
 -- Internal.
@@ -23,24 +23,39 @@ function MenuImage:initialize(spec, root)
   self.angle = 0
   self.xScale = 1
   self.yScale = 1
+  self.xShear = 0
+  self.yShear = 0
   self.autoScale = true
+  self.image = false
   Base.initialize(self, spec, root)
 
   if not spec.height and not spec.heightOffset then
-    self.heightOffset = spec.frameHeight
+    self.heightOffset = self.image:getHeight()
   end
 
   if not spec.width and not spec.widthOffset then
-    self.widthOffset = spec.frameWidth
+    self.widthOffset = self.image:getWidth()
   end
-
-  self._animation = AnAL.newAnimation(spec.image, spec.frameWidth, spec.frameHeight, spec.delay, spec.frames)
 end
 
 ---
 -- Getters/Setters.
 -- Getters and setters for element properties
 -- @section Getters/Setters
+
+---
+-- Returns the @{love:Image} associated with the element
+-- @treturn @{love:Image} Image
+function MenuImage:getImage()
+  return self.image
+end
+
+---
+-- Sets the @{love:Image} associated with the element
+-- @tparam @{love:Image} image Image
+function MenuImage:setImage(image)
+  self.image = image
+end
 
 ---
 -- Returns an image's angle
@@ -118,76 +133,52 @@ function MenuImage:setAutoScale(scale)
 end
 
 ---
--- LÖVE Callbacks.
--- LÖVE callback handlers for Silicone elements
--- @section LÖVE Callbacks
-
----
--- Updates an Image
--- @tparam number dt Time since the last update in seconds
-function MenuImage:update(dt)
-  self._animation:update(dt)
+-- Returns the shearing factor for the image's X-axis
+-- @treturn number Shear factor
+function MenuImage:getXShear()
+  return self.xShear
 end
 
 ---
--- AnAL Functions.
--- AnAL convenience functions for Silicone Images
--- @section AnAL Functions
+-- Sets the shearing factor for the image's X-axis
+-- @tparam number x Shear factor
+function MenuImage:setXShear(x)
+  self.xShear = x
+end
 
 ---
--- Generic AnAL function.
+-- Returns the shearing factor for the image's Y-axis
+-- @treturn number Shear factor
+function MenuImage:getYShear()
+  return self.yShear
+end
+
+---
+-- Sets the shearing factor for the image's X-axis
+-- @tparam number y Shear factor
+function MenuImage:setYShear(y)
+  self.yShear = y
+end
+
+---
+-- Returns the shearing factor for the image's X and Y axes
+-- @treturn number X Shear factor
+-- @treturn number Y Shear factor
+function MenuImage:getShear()
+  return self:getXShear(), self:getYShear()
+end
+
+---
+-- Sets the shearing factor for the image's X and Y axes
+-- @tparam number x X Shear factor
+-- @tparam number y Y Shear factor
+function MenuImage:setShear(x, y)
+  self:setXShear(x)
+  self:setYShear(y)
+end
+
+---
+-- Returns the image element's absolute X position.
 --
--- The Image element implements all of AnAL's functions so you can
--- manipulate them just like you would a normal AnAL animation.
--- @function Image:AnALFunction
--- @param ...
--- @see love:AnAL
--- @usage
--- -- ...
--- -- Create Image 'image'
--- -- ...
---
--- -- Set an Image's speed to ~30 FPS
--- image:setSpeed(0.333)
 
-function MenuImage:addFrame(...)
-  self._animation:addFrame(...)
-end
-
-function MenuImage:getCurrentFrame()
-  return self._animation:getCurrentFrame()
-end
-
-function MenuImage:getSize()
-  return self._animation:getSize()
-end
-
-function MenuImage:play()
-  self._animation:play()
-end
-
-function MenuImage:reset()
-  self._animation:reset()
-end
-
-function MenuImage:seek(...)
-  self._animation:seek(...)
-end
-
-function MenuImage:setDelay(...)
-  self._animation:setDelay(...)
-end
-
-function MenuImage:setMode(...)
-  self._animation:setMode(...)
-end
-
-function MenuImage:setSpeed(...)
-  self._animation:setSpeed(...)
-end
-
-function MenuImage:stop()
-  self._animation:stop()
-end
-
-return MenuImage
+return Image

@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>Reference</title>
+    <link rel="stylesheet" href="../ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>Silicone</h1>
+
+<ul>
+  <li><a href="../readme.html">Index</a></li>
+</ul>
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Internal">Internal </a></li>
+<li><a href="#Getters_Setters">Getters/Setters </a></li>
+<li><a href="#L__VE_Callbacks">LÖVE Callbacks </a></li>
+<li><a href="#AnAL_Functions">AnAL Functions </a></li>
+</ul>
+
+
+<h2>Classes</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><strong>Animation</strong></li>
+  <li><a href="../classes/Base.html">Base</a></li>
+  <li><a href="../classes/Button.html">Button</a></li>
+  <li><a href="../classes/Canvas.html">Canvas</a></li>
+  <li><a href="../classes/Image.html">Image</a></li>
+  <li><a href="../classes/Label.html">Label</a></li>
+  <li><a href="../classes/Panel.html">Panel</a></li>
+  <li><a href="../classes/ProgressBar.html">ProgressBar</a></li>
+  <li><a href="../classes/Root.html">Root</a></li>
+  <li><a href="../classes/Spinner.html">Spinner</a></li>
+  <li><a href="../classes/Text.html">Text</a></li>
+  <li><a href="../classes/TextInput.html">TextInput</a></li>
+</ul>
+<h2>Modules</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../modules/Silicone.html">Silicone</a></li>
+</ul>
+<h2>Topics</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../topics/readme.md.html">readme</a></li>
+</ul>
+<h2>Examples</h2>
+<ul class="$(kind=='Topics' and '' or 'nowrap'">
+  <li><a href="../examples/main.lua.html">main.lua</a></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Class <code>Animation</code></h1>
+<p>An animation element using the <a href="https://www.love2d.org/wiki/AnAL">AnAL</a> library.</p>
+<p>
+
+</p>
+
+
+<h2><a href="#Internal">Internal </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Animation:initialize">Animation:initialize (spec, root)</a></td>
+	<td class="summary">Initializes an Animation element</td>
+	</tr>
+</table>
+<h2><a href="#Getters_Setters">Getters/Setters </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Animation:getAngle">Animation:getAngle ()</a></td>
+	<td class="summary">Returns an animation's angle</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Animation:setAngle">Animation:setAngle (angle)</a></td>
+	<td class="summary">Sets an animation's angle</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Animation:getXScale">Animation:getXScale ()</a></td>
+	<td class="summary">Returns an animation's X scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Animation:setXScale">Animation:setXScale (x)</a></td>
+	<td class="summary">Sets an animation's X scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Animation:getYScale">Animation:getYScale ()</a></td>
+	<td class="summary">Returns an animation's Y scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Animation:setYScale">Animation:setYScale (y)</a></td>
+	<td class="summary">Sets an animation's Y scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Animation:getScale">Animation:getScale ()</a></td>
+	<td class="summary">Returns an animation's scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Animation:setScale">Animation:setScale (x, y)</a></td>
+	<td class="summary">Sets an animation's scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Animation:getAutoScale">Animation:getAutoScale ()</a></td>
+	<td class="summary">Returns whether or not the animation is set to auto scale</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#Animation:setAutoScale">Animation:setAutoScale (scale)</a></td>
+	<td class="summary">Sets whether or not the animation should auto scale</td>
+	</tr>
+</table>
+<h2><a href="#L__VE_Callbacks">LÖVE Callbacks </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Animation:update">Animation:update (dt)</a></td>
+	<td class="summary">Updates an Animation</td>
+	</tr>
+</table>
+<h2><a href="#AnAL_Functions">AnAL Functions </a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#Animation:AnALFunction">Animation:AnALFunction (...)</a></td>
+	<td class="summary">Generic AnAL function.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header has-description"><a name="Internal"></a>Internal </h2>
+
+          <div class="section-description">
+           Internal methods
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Animation:initialize"></a>
+    <strong>Animation:initialize (spec, root)</strong>
+    </dt>
+    <dd>
+    Initializes an Animation element
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">spec</span>
+            <span class="types"><a class="type" href="http://www.lua.org/manual/5.1/manual.html#5.5">table</a></span>
+         Menu specification
+        </li>
+        <li><span class="parameter">root</span>
+            <span class="types"><a class="type" href="../classes/Root.html#">Root</a></span>
+         Root element
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="Getters_Setters"></a>Getters/Setters </h2>
+
+          <div class="section-description">
+           Getters and setters for element properties
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Animation:getAngle"></a>
+    <strong>Animation:getAngle ()</strong>
+    </dt>
+    <dd>
+    Returns an animation's angle
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        angle
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Animation:setAngle"></a>
+    <strong>Animation:setAngle (angle)</strong>
+    </dt>
+    <dd>
+    Sets an animation's angle
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">angle</span>
+            <span class="types"><span class="type">number</span></span>
+         angle
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Animation:getXScale"></a>
+    <strong>Animation:getXScale ()</strong>
+    </dt>
+    <dd>
+    Returns an animation's X scale
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        X scale
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Animation:setXScale"></a>
+    <strong>Animation:setXScale (x)</strong>
+    </dt>
+    <dd>
+    Sets an animation's X scale
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X scale
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Animation:getYScale"></a>
+    <strong>Animation:getYScale ()</strong>
+    </dt>
+    <dd>
+    Returns an animation's Y scale
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">number</span></span>
+        Y scale
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Animation:setYScale"></a>
+    <strong>Animation:setYScale (y)</strong>
+    </dt>
+    <dd>
+    Sets an animation's Y scale
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y scale
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Animation:getScale"></a>
+    <strong>Animation:getScale ()</strong>
+    </dt>
+    <dd>
+    Returns an animation's scale
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        X scale</li>
+        <li>
+           <span class="types"><span class="type">number</span></span>
+        Y scale</li>
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Animation:setScale"></a>
+    <strong>Animation:setScale (x, y)</strong>
+    </dt>
+    <dd>
+    Sets an animation's scale
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">x</span>
+            <span class="types"><span class="type">number</span></span>
+         X scale
+        </li>
+        <li><span class="parameter">y</span>
+            <span class="types"><span class="type">number</span></span>
+         Y scale
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Animation:getAutoScale"></a>
+    <strong>Animation:getAutoScale ()</strong>
+    </dt>
+    <dd>
+    Returns whether or not the animation is set to auto scale
+
+
+
+    <h3>Returns:</h3>
+    <ol>
+
+           <span class="types"><span class="type">bool</span></span>
+        autoscale
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "Animation:setAutoScale"></a>
+    <strong>Animation:setAutoScale (scale)</strong>
+    </dt>
+    <dd>
+    Sets whether or not the animation should auto scale
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">scale</span>
+            <span class="types"><span class="type">bool</span></span>
+         autoscale
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="L__VE_Callbacks"></a>LÖVE Callbacks </h2>
+
+          <div class="section-description">
+           LÖVE callback handlers for Silicone elements
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Animation:update"></a>
+    <strong>Animation:update (dt)</strong>
+    </dt>
+    <dd>
+    Updates an Animation
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">dt</span>
+            <span class="types"><span class="type">number</span></span>
+         Time since the last update in seconds
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header has-description"><a name="AnAL_Functions"></a>AnAL Functions </h2>
+
+          <div class="section-description">
+           AnAL convenience functions for Silicone Animations
+          </div>
+    <dl class="function">
+    <dt>
+    <a name = "Animation:AnALFunction"></a>
+    <strong>Animation:AnALFunction (...)</strong>
+    </dt>
+    <dd>
+    Generic AnAL function. </p>
+
+<p> The Animation element implements all of AnAL's functions so you can
+ manipulate them just like you would a normal AnAL animation.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">...</span>
+
+
+
+        </li>
+    </ul>
+
+
+
+    <h3>See also:</h3>
+    <ul>
+         <a href="https://www.love2d.org/wiki/AnAL">AnAL</a>
+    </ul>
+
+    <h3>Usage:</h3>
+    <ul>
+        <pre class="example">
+ <span class="comment">-- ...
+</span> <span class="comment">-- Create Animation 'animation'
+</span> <span class="comment">-- ...
+</span>
+ <span class="comment">-- Set an Animation's speed to ~30 FPS
+</span> animation:setSpeed(<span class="number">0.333</span>)</pre>
+    </ul>
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.3</a></i>
+<i style="float:right;">Last updated 2017-01-28 05:09:52 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>

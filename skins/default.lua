@@ -35,11 +35,18 @@ function default.Canvas.draw(self)
   love.graphics.draw(self._canvas)
 end
 
+default.Animation = {}
+function default.Animation.draw(self)
+  local xs = self.autoScale and self:getAbsoluteWidth()/self._animation:getWidth() or self.xScale
+  local ys = self.autoScale and self:getAbsoluteHeight()/self._animation:getHeight() or self.yScale
+  self._animation:draw(self:getAbsoluteX(), self:getAbsoluteY(), self.angle, xs, ys)
+end
+
 default.Image = {}
 function default.Image.draw(self)
   local xs = self.autoScale and self:getAbsoluteWidth()/self._animation:getWidth() or self.xScale
   local ys = self.autoScale and self:getAbsoluteHeight()/self._animation:getHeight() or self.yScale
-  self._animation:draw(self:getAbsoluteX(), self:getAbsoluteY(), self.angle, xs, ys)
+  love.graphics.draw(self.image, self:getAbsoluteX(), self:getAbsoluteY(), self:getAngle(), xs, ys)
 end
 
 default.Button = {
